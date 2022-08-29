@@ -1,7 +1,7 @@
 package ru.nemesh;
 
-public class ConvertToRoman {
-    public static int convert(String a) {
+public class ConvertToRoman implements Rom {
+    public static int convertr(String a) {
 
         if (a.equals("I")) return 1;
         if (a.equals("II")) return 2;

@@ -2,13 +2,15 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-import static ru.nemesh.ConvertToRoman.convert;
+import static ru.nemesh.ConvertToArab.converta;
+import static ru.nemesh.ConvertToRoman.convertr;
 
 public class Calculator<num> {
     public static void main(String[] args) {
         int num1 = getInt();
         int num2 = getInt();
-        ConvertToRoman convert = new ConvertToRoman();
+        ConvertToRoman convertr = new ConvertToRoman();
+        ConvertToArab converta = new ConvertToArab();
         char operation = getOperation();
         int result = calc(num1, num2, operation);
         System.out.println("Результат: " + result);
@@ -19,10 +21,10 @@ public class Calculator<num> {
         Scanner scanner = new Scanner(System.in);
         int num;
         if(scanner.hasNextLine()){
-            num = convert(scanner.nextLine());
+            num = convertr(scanner.nextLine());
         } else {
-            num = scanner.nextInt();
-        }
+            num = converta(scanner.nextLine());
+    }
         return num;
     }
 
@@ -33,7 +35,7 @@ public class Calculator<num> {
         if(scanner.hasNext()){
             operation = scanner.next().charAt(0);
         } else {
-            System.out.println("Вы допустили ошибку");
+            System.out.println("Ошибка");
             scanner.next();
             operation = getOperation();
         }
@@ -56,7 +58,7 @@ public class Calculator<num> {
                 result = num1/num2;
                 break;
             default:
-                System.out.println("Операция не распознана. Повторите ввод.");
+                System.out.println("Ошибка");
                 result = calc(num1, num2, getOperation());
         }
         return result;
