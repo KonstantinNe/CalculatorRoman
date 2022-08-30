@@ -2,15 +2,12 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-import static ru.nemesh.ConvertToArab.converta;
 import static ru.nemesh.ConvertToRoman.convertr;
 
 public class Calculator<num> {
     public static void main(String[] args) {
         int num1 = getInt();
         int num2 = getInt();
-        ConvertToRoman convertr = new ConvertToRoman();
-        ConvertToArab converta = new ConvertToArab();
         char operation = getOperation();
         int result = calc(num1, num2, operation);
         System.out.println("Результат: " + result);
@@ -23,7 +20,7 @@ public class Calculator<num> {
         if(scanner.hasNextLine()){
             num = convertr(scanner.nextLine());
         } else {
-            num = converta(scanner.nextLine());
+            num = convertr(scanner.nextLine());
     }
         return num;
     }
