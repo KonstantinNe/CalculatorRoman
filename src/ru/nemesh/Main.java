@@ -2,9 +2,9 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-import static ru.nemesh.ConvertToRoman.convertr;
+import static ru.nemesh.Rom.convertr;
 
-public class Calculator<num> {
+public class Main {
     public static void main(String[] args) {
         int num1 = getInt();
         int num2 = getInt();
@@ -24,7 +24,6 @@ public class Calculator<num> {
     }
         return num;
     }
-
     public static char getOperation(){
         System.out.println("Введите операцию (+-*/):");
         Scanner scanner = new Scanner(System.in);
