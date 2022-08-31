@@ -3,7 +3,7 @@ package ru.nemesh;
 import java.util.Scanner;
 
 public class ConvertToRoman implements Rom {
-    public static int convertr(String a) {
+    public static int convert(String a) {
 
         if (a.equals("I")) return 1;
         if (a.equals("II")) return 2;
