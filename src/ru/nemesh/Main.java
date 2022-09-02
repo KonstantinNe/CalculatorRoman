@@ -2,7 +2,7 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-import static ru.nemesh.ConvertToResult.convertresult;
+//import static ru.nemesh.ConvertToResult.convertresult;
 import static ru.nemesh.ConvertToRoman.convert;
 
 public class Main {
@@ -17,10 +17,8 @@ public class Main {
     public static int getInt() {
         System.out.println("Введите число:");
         Scanner scanner = new Scanner(System.in);
-        int num;
+        int num = 0;
         if (scanner.hasNextLine()) {
-            num = convert(scanner.nextLine());
-        } else {
             num = convert(scanner.nextLine());
         }
         return num;
@@ -29,19 +27,15 @@ public class Main {
     public static char getOperation() {
         System.out.println("Введите операцию (+-*/):");
         Scanner scanner = new Scanner(System.in);
-        char operation;
+        char operation = 0;
         if (scanner.hasNext()) {
             operation = scanner.next().charAt(0);
-        } else {
-            System.out.println("Ошибка");
-            scanner.next();
-            operation = getOperation();
+            return operation;
         }
         return operation;
     }
 
     public static int calc(int num1, int num2, char operation) {
-        Scanner scanner = new Scanner(System.in);
         int result;
         switch (operation) {
             case '+':
@@ -59,6 +53,7 @@ public class Main {
             default:
                 System.out.println("Ошибка");
                 result = calc(num1, num2, getOperation());
+                return result;
         }
         return result;
     }
