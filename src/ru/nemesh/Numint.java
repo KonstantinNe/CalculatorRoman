@@ -2,10 +2,21 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-public class Numint {
+public class Numint implements Rom{
     public static int getInt() {
         System.out.println("Введите число:");
         Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            try {
+                if (scanner.hasNextInt());
+                int num = scanner.nextInt();
+                return num;
+            }
+            catch (Exception e) {
+                System.out.println("Ошибка!");
+                break;
+            }
+        }
         if (scanner.hasNextLine());
         int num = convert(scanner.nextLine());
         return num;
