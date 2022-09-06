@@ -2,37 +2,16 @@ package ru.nemesh;
 
 import java.util.Scanner;
 
-//import static ru.nemesh.ConvertToResult.convertresult;
-import static ru.nemesh.ConvertToRoman.convert;
+import static ru.nemesh.Oper.getOperation;
+
 
 public class Main {
     public static void main(String[] args) {
-        int num1 = getInt();
-        int num2 = getInt();
+        int num1 = Numint.getInt();
+        int num2 = Numint.getInt();
         char operation = getOperation();
         int result = calc(num1, num2, operation);
         System.out.println("Результат: " + result);
-    }
-
-    public static int getInt() {
-        System.out.println("Введите число:");
-        Scanner scanner = new Scanner(System.in);
-        int num = 0;
-        if (scanner.hasNextLine()) {
-            num = convert(scanner.nextLine());
-        }
-        return num;
-    }
-
-    public static char getOperation() {
-        System.out.println("Введите операцию (+-*/):");
-        Scanner scanner = new Scanner(System.in);
-        char operation = 0;
-        if (scanner.hasNext()) {
-            operation = scanner.next().charAt(0);
-            return operation;
-        }
-        return operation;
     }
 
     public static int calc(int num1, int num2, char operation) {
