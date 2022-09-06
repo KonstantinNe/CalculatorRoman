@@ -8,7 +8,6 @@ public class Numint implements Rom{
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
             try {
-                if (scanner.hasNextInt());
                 int num = scanner.nextInt();
                 return num;
             }
@@ -43,6 +42,6 @@ public class Numint implements Rom{
         if (a.equals("8")) return 8;
         if (a.equals("9")) return 9;
         if (a.equals("10")) return 10;
-        return 0;
+        return getInt();
     }
 }
