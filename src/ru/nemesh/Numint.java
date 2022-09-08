@@ -41,11 +41,4 @@ public class Numint implements Rom {
         if (a.equals("X")) return 10;
         return getInt();
     }
-
-    public static int test(int a) {
-        if (a < 0) {
-            System.err.println("Число должно быть положительным!!!");
-        }
-        return getInt();
-    }
 }
