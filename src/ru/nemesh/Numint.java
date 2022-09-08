@@ -8,7 +8,6 @@ public class Numint implements Rom {
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 5; i++) {
             try {
-                //int num = test(scanner.nextInt());
                 int num = scanner.nextInt();
                 if (num < 0) {
                     System.err.println("Число должно быть положительным!!!");
