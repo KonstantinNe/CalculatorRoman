@@ -10,6 +10,10 @@ public class Numint implements Rom {
             try {
                 //int num = test(scanner.nextInt());
                 int num = scanner.nextInt();
+                if (num < 0) {
+                    System.err.println("Число должно быть положительным!!!");
+                    return getInt();
+                }
                 return num;
                 
             } catch (Exception e) {
