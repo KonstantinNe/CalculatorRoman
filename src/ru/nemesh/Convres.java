@@ -1,6 +1,7 @@
 package ru.nemesh;
 
 public class Convres {
+
     public static String convertresult(String a) {
 
         if (a.equals("1")) return "I";
@@ -13,6 +14,7 @@ public class Convres {
         if (a.equals("8")) return "VIII";
         if (a.equals("9")) return "IX";
         if (a.equals("10")) return "X";
-        return a;
+
+        return null;
     }
 }
