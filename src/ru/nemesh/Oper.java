@@ -3,7 +3,7 @@ package ru.nemesh;
 import java.util.Scanner;
 
 public class Oper {
-    public static char getOperation() {
+    public char getOperation() {
         System.out.println("Введите операцию (+-*/):");
         Scanner scanner = new Scanner(System.in);
         char operation;
