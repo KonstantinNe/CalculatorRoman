@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Main implements Rom{
     public static void main(String[] args) {
         int num1 = getInt();
-
         int num2 = getInt();
         char operation = Oper.getOperation();
         int result = Calculations.calc(num1, num2, operation);
         System.out.println("Результат: " + result);
     }
+
     public static int getInt() {
         System.out.println("Введите число:");
         Scanner scanner = new Scanner(System.in);

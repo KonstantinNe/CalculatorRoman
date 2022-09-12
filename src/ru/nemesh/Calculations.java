@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Calculations {
 
-    public static int calc(int num1, int num2, char operation) {
+    public int calc(int num1, int num2, char operation) {
         Scanner scanner = new Scanner(System.in);
         int result;
         switch (operation) {
