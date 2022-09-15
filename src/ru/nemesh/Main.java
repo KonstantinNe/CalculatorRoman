@@ -26,7 +26,7 @@ public class Main {
             operation = scanner.nextLine();
 
             Arab calc = new Arab();
-            int result;
+            int result = 0;
             switch (operation) {
                 case "+":
                     result = calc.plus(num1, num2);
@@ -39,17 +39,10 @@ public class Main {
                     break;
                 case "/":
                     result = calc.divide(num1, num2);
-//                   }else{
-////            System.out.println(исключение);
-                    //             break;
-//            default:
-//                System.out.println("Ошибка");
-//                result = calc(num1, num2, operation);
-                    //        int result = Calculations.calc(num1, num2, operation);
-//        System.out.println("Результат: " + result);
                     break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + operation);
+            default:
+                System.out.println("Ошибка, Вы не ввели оператор!!!");
+                System.exit(1);
             }
             System.out.println("Результат: " + result);
         }
@@ -102,3 +95,20 @@ public class Main {
 //        return getInt();
 //    }
 //}
+
+
+
+//package ru.nemesh;
+//
+//import java.util.Scanner;
+//
+//public class Oper {
+//    public char getOperation() {
+//        System.out.println("Введите операцию (+-*/):");
+//        Scanner scanner = new Scanner(System.in);
+//        char operation;
+//        if (scanner.hasNext());
+//            operation = scanner.next().charAt(0);
+//            return operation;
+//        }
+//    }

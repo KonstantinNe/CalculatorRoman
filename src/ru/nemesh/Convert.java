@@ -1,8 +1,8 @@
 //package ru.nemesh;
 //
-//public class Convres {
+//public class Convert {
 //
-//    public String convertresult(String a) {
+//    public String convertrom(String a) {
 //
 //        if (a.equals("1")) return "I";
 //        if (a.equals("2")) return "II";
