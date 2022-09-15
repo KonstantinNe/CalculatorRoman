@@ -41,7 +41,7 @@ public class Main {
                     result = calc.divide(num1, num2);
                     break;
             default:
-                System.out.println("Ошибка, Вы не ввели оператор!!!");
+                System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
                 System.exit(1);
             }
             System.out.println("Результат: " + result);
