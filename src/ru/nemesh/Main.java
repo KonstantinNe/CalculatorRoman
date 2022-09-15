@@ -7,41 +7,53 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число:");
         int num1 = scanner.nextInt();
-        System.out.println("Введите число:");
-        int num2 = scanner.nextInt();
-        System.out.println("Введите оператор:");
-        String operation  = scanner.nextLine();
-        operation = scanner.nextLine();
+        if (num1 > 0) {
+        } else {
+            if (num1 < 0);
+            System.out.println("Число должно быть положительным!!!");
+                System.exit(1);
+    }
+            System.out.println("Введите число:");
+            int num2 = scanner.nextInt();
+        if (num2 > 0) {
+        } else {
+            if (num2 < 0);
+            System.out.println("Число должно быть положительным!!!");
+            System.exit(1);
+        }
+            System.out.println("Введите оператор:");
+            String operation = scanner.nextLine();
+            operation = scanner.nextLine();
 
-        Arab calc = new Arab();
-        int result;
-        switch (operation) {
-            case "+":
-                result = calc.plus(num1, num2);
-                break;
-            case "-":
-                result = calc.minus(num1, num2);
-                break;
-            case "*":
-                result = calc.multiply(num1, num2);
-                break;
-            case "/":
-                result = calc.divide(num1, num2);
+            Arab calc = new Arab();
+            int result;
+            switch (operation) {
+                case "+":
+                    result = calc.plus(num1, num2);
+                    break;
+                case "-":
+                    result = calc.minus(num1, num2);
+                    break;
+                case "*":
+                    result = calc.multiply(num1, num2);
+                    break;
+                case "/":
+                    result = calc.divide(num1, num2);
 //                   }else{
 ////            System.out.println(исключение);
-                //             break;
+                    //             break;
 //            default:
 //                System.out.println("Ошибка");
 //                result = calc(num1, num2, operation);
-                //        int result = Calculations.calc(num1, num2, operation);
+                    //        int result = Calculations.calc(num1, num2, operation);
 //        System.out.println("Результат: " + result);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + operation);
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + operation);
+            }
+            System.out.println("Результат: " + result);
         }
-        System.out.println("Результат: " + result);
     }
-}
     
         
 
