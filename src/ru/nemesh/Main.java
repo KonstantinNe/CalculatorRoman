@@ -4,18 +4,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число:");
         int num1 = scanner.nextInt();
         System.out.println("Введите число:");
         int num2 = scanner.nextInt();
         System.out.println("Введите оператор:");
-        String operation = scanner.nextLine();
+        String operation  = scanner.nextLine();
         operation = scanner.nextLine();
 
         Arab calc = new Arab();
-        int result = 0;
+        int result;
         switch (operation) {
             case "+":
                 result = calc.plus(num1, num2);
@@ -36,6 +35,9 @@ public class Main {
 //                result = calc(num1, num2, operation);
                 //        int result = Calculations.calc(num1, num2, operation);
 //        System.out.println("Результат: " + result);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + operation);
         }
         System.out.println("Результат: " + result);
     }
