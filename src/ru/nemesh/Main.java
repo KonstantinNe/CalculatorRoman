@@ -5,34 +5,42 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число:");
-        int num1 = scanner.nextInt();
-        if (num1 > 0) {
-        } else {
-            if (num1 < 0);
-            System.out.println("Число должно быть положительным!!! Введите число:");
-            num1 = scanner.nextInt();
+        System.out.println("Введите :");
+        String input = scanner.nextLine();
+        String[] mas = input.split(" ");
+
+         String num1 = mas[0];
+         String operation = mas[1];
+         String num2 = mas[2];
+//        int num1 = scanner.nextInt();
+//        if (num1 > 0) {
+//        } else {
+//            if (num1 < 0);
+//            System.out.println("Число должно быть положительным!!! Введите число:");
+//            num1 = Integer.parseInt(scanner.nextLine());
+//            System.out.println ("Ошибка! Вы ввели символ или букву");
+//            num1 = scanner.nextInt();
 //    }                catch (Exception e) {
 //               System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
 //               break;
-            }
-            System.out.println("Введите число:");
-            int num2 = scanner.nextInt();
-        if (num2 > 0) {
-        } else {
-            if (num2 < 0);
-            System.out.println("Число должно быть положительным!!!");
-            System.exit(1);
-        }
-            System.out.println("Введите оператор:");
-            String operation = scanner.nextLine();
-            operation = scanner.nextLine();
+//            }
+//            System.out.println("Введите число:");
+//            int num2 = scanner.nextInt();
+//        if (num2 > 0) {
+//        } else {
+//            if (num2 < 0);
+//            System.out.println("Число должно быть положительным!!!");
+//            System.exit(1);
+//        }
+//            System.out.println("Введите оператор:");
+//            String operation = scanner.nextLine();
+//            operation = scanner.nextLine();
 
             Arab calc = new Arab();
-            int result = 0;
+            double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(num1, num2);
+                    result = Double.parseDouble(calc.plus(num1, num2));
                     break;
                 case "-":
                     result = calc.minus(num1, num2);

@@ -1,8 +1,8 @@
 package ru.nemesh;
 
 public interface Calculator {
-     char plus(int a, int b);
-     char minus(int a, int b);
-     char multiply(int a, int b);
-     char divide(int a, int b);
+     String plus(String a, String b);
+     char minus(String a, String b);
+     char multiply(String a, String b);
+     char divide(String a, String b);
 }
