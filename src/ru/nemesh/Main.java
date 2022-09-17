@@ -10,9 +10,12 @@ public class Main {
         if (num1 > 0) {
         } else {
             if (num1 < 0);
-            System.out.println("Число должно быть положительным!!!");
-                System.exit(1);
-    }
+            System.out.println("Число должно быть положительным!!! Введите число:");
+            num1 = scanner.nextInt();
+//    }                catch (Exception e) {
+//               System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
+//               break;
+            }
             System.out.println("Введите число:");
             int num2 = scanner.nextInt();
         if (num2 > 0) {
