@@ -10,31 +10,37 @@ public class Main {
         String[] mas = input.split(" ");
 
         int num1 = Integer.parseInt(mas[0]);
-        String operation = mas[1];
-        int num2 = Integer.parseInt(mas[2]);
-
-        Arab calc = new Arab();
-        int result = 0;
-        switch (operation) {
-            case "+":
-                result = calc.plus(num1, num2);
-                break;
-            case "-":
-                result = calc.minus(num1, num2);
-                break;
-            case "*":
-                result = calc.multiply(num1, num2);
-                break;
-            case "/":
-                result = calc.divide(num1, num2);
-                break;
-            default:
-                System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
-                System.exit(1);
+        if (num1 > 0) {
+        } else {
+            if (num1 <= 0) ;
+            System.out.println("Число должно быть положительным!!! Введите число:");
+            num1 = scanner.nextInt();
         }
-        System.out.println("Результат: " + result);
+            String operation = mas[1];
+            int num2 = Integer.parseInt(mas[2]);
+
+            Arab calc = new Arab();
+            int result = 0;
+            switch (operation) {
+                case "+":
+                    result = calc.plus(num1, num2);
+                    break;
+                case "-":
+                    result = calc.minus(num1, num2);
+                    break;
+                case "*":
+                    result = calc.multiply(num1, num2);
+                    break;
+                case "/":
+                    result = calc.divide(num1, num2);
+                    break;
+                default:
+                    System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
+                    System.exit(1);
+            }
+            System.out.println("Результат: " + result);
+        }
     }
-}
 
 
 
