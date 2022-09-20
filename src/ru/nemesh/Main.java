@@ -5,25 +5,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите число:");
-        int num1 = scanner.nextInt();
+        System.out.println("Введите положительные числа и нужный оператор (+/*-):");
+        String input = scanner.nextLine();
+        String[] mas = input.split(" ");
+
+        int num1 = Integer.parseInt(mas[0]);
         if (num1 > 0) {
         } else {
-            if (num1 < 0);
-            System.out.println("Число должно быть положительным!!!");
-                System.exit(1);
-    }
-            System.out.println("Введите число:");
-            int num2 = scanner.nextInt();
-        if (num2 > 0) {
-        } else {
-            if (num2 < 0);
-            System.out.println("Число должно быть положительным!!!");
-            System.exit(1);
+            if (num1 <= 0) ;
+            System.out.println("Число должно быть положительным!!! Введите число:");
+            num1 = scanner.nextInt();
         }
-            System.out.println("Введите оператор:");
-            String operation = scanner.nextLine();
-            operation = scanner.nextLine();
+            String operation = mas[1];
+            int num2 = Integer.parseInt(mas[2]);
 
             Arab calc = new Arab();
             int result = 0;
@@ -40,15 +34,39 @@ public class Main {
                 case "/":
                     result = calc.divide(num1, num2);
                     break;
-            default:
-                System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
-                System.exit(1);
+                default:
+                    System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
+                    System.exit(1);
             }
             System.out.println("Результат: " + result);
         }
     }
-    
-        
+
+
+
+//        int num1 = scanner.nextInt();
+//        if (num1 > 0) {
+//        } else {
+//            if (num1 < 0);
+//            System.out.println("Число должно быть положительным!!! Введите число:");
+//            num1 = Integer.parseInt(scanner.nextLine());
+//            System.out.println ("Ошибка! Вы ввели символ или букву");
+//            num1 = scanner.nextInt();
+//    }                catch (Exception e) {
+//               System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
+//               break;
+//            }
+//            System.out.println("Введите число:");
+//            int num2 = scanner.nextInt();
+//        if (num2 > 0) {
+//        } else {
+//            if (num2 < 0);
+//            System.out.println("Число должно быть положительным!!!");
+//            System.exit(1);
+//        }
+//            System.out.println("Введите оператор:");
+//            String operation = scanner.nextLine();
+//            operation = scanner.nextLine();
 
 
 //        int num1;
