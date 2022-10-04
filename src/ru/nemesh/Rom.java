@@ -2,21 +2,21 @@
 //
 //public class Rom implements Calculator{
 //    @Override
-//    public char plus(int a, int b) {
-//        return Convert.convertrom(String.valueOf(a + b));
+//    public int plus(int a, int b) {
+//        return Integer.parseInt(Convert.convertrom(String.valueOf(a + b)));
 //    }
 //
 //    @Override
-//    public char minus(int a, int b) {
+//    public String minus(int a, int b) {
 //        return Convert.convertrom(String.valueOf(a - b));
 //    }
 //
 //    @Override
-//    public char multiply(int a, int b) {
+//    public String multiply(int a, int b) {
 //        return Convert.convertrom(String.valueOf(a * b));    }
 //
 //    @Override
-//    public char divide(int a, int b) {
+//    public String divide(int a, int b) {
 //        return Convert.convertrom(String.valueOf(a / b));
 //    }
 //}
