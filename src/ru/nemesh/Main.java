@@ -10,27 +10,25 @@ public class Main {
         while (input.equals("exit"));
             String[] mas = input.split(" ");
 
-            String num1 = (mas[0]);
-            Convert.convertrom(num1);
-            // num1 = Check.getInt();
+            int num1 = Integer.parseInt((mas[0]));
             String operation = mas[1];
-            String num2 = (mas[2]);
+            int num2 = Integer.parseInt((mas[2]));
 
             Arab calc = new Arab();
           //  Rom calc1 = new Rom();
             double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.plus(num1, num2);
                     break;
                 case "-":
-                    result = Double.parseDouble(calc.minus(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = Double.parseDouble(calc.minus(num1, num2));
                     break;
                 case "*":
-                    result = Double.parseDouble(calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = Double.parseDouble(calc.multiply(num1, num2));
                     break;
                 case "/":
-                    result = Double.parseDouble(calc.divide(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = Double.parseDouble(calc.divide(num1, num2));
                     break;
                 default:
                     System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
