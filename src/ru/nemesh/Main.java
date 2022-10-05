@@ -7,32 +7,30 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");
         String input = scanner.nextLine();
-        String[] mas = input.split(" ");
+        while (input.equals("exit"));
+            String[] mas = input.split(" ");
 
-        int num1 = Integer.parseInt(mas[0]);
-        if (num1 > 0) {
-        } else {
-            if (num1 <= 0) ;
-            System.out.println("Число должно быть положительным!!! Введите число:");
-            num1 = scanner.nextInt();
-        }
+            String num1 = (mas[0]);
+            Convert.convertrom(num1);
+            // num1 = Check.getInt();
             String operation = mas[1];
-            int num2 = Integer.parseInt(mas[2]);
+            String num2 = (mas[2]);
 
             Arab calc = new Arab();
-            int result = 0;
+          //  Rom calc1 = new Rom();
+            double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(num1, num2);
+                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "-":
-                    result = calc.minus(num1, num2);
+                    result = Double.parseDouble(calc.minus(Integer.parseInt(num1), Integer.parseInt(num2)));
                     break;
                 case "*":
-                    result = calc.multiply(num1, num2);
+                    result = Double.parseDouble(calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2)));
                     break;
                 case "/":
-                    result = calc.divide(num1, num2);
+                    result = Double.parseDouble(calc.divide(Integer.parseInt(num1), Integer.parseInt(num2)));
                     break;
                 default:
                     System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
@@ -41,6 +39,7 @@ public class Main {
             System.out.println("Результат: " + result);
         }
     }
+//}
 
 
 
