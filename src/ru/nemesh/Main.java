@@ -1,7 +1,5 @@
 package ru.nemesh;
 
-import javafx.scene.shape.Line;
-
 import java.util.Scanner;
 
 public class Main {

@@ -9,17 +9,17 @@ public class Arab implements Calculator{
 
     @Override
     public int minus(int a, int b) {
-        return String.valueOf((char) (a - b));
+        return ((char) (a - b));
     }
 
     @Override
     public int multiply(int a, int b) {
-        return String.valueOf((char) (a * b));
+        return ((char) (a * b));
     }
 
     @Override
     public int divide(int a, int b) {
-        return String.valueOf((char) (a / b));
+        return ((char) (a / b));
     }
 }
 //    public String plus(String a, String b) {

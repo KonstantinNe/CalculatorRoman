@@ -1,24 +1,38 @@
 package ru.nemesh;
 
 public class Check {
-    public static int getInt(String a) {
-  //      Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 1; i++) {
-            try {
-                if (a.equals(0)) {
-                    System.err.println("Число должно быть положительным!!!");
-                    break;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
+        public static int getInt(String a) {
+            if (isNumeric("1")); // true
+            
+            isNumeric("I"); // false
 
-                return Integer.parseInt(a);
+            return Integer.parseInt(a);
+        }
+        public static boolean isNumeric(String a) {
+            try {
+                Double.parseDouble(a);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
             }
         }
-        return Integer.parseInt(a);
     }
-}
+    //      Scanner scanner = new Scanner(System.in);
+//        for (int i = 0; i < 1; i++) {
+//            try {
+//                if (a.equals(0)) {
+//                    System.err.println("Число должно быть положительным!!!");
+//                    break;
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
+//
+//                return Integer.parseInt(a);
+//            }
+//        }
+//        return Integer.parseInt(a);
+//    }
 
 
 //        for (int i = 0; i < 5; i++) {
