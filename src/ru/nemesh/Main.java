@@ -35,13 +35,13 @@ public class Main {
                     result = calc.plus(Integer.parseInt(num1), num2);
                     break;
                 case "-":
-                    result = Double.parseDouble(calc.minus(Integer.parseInt(num1), num2));
+                    result = calc.minus(Integer.parseInt(num1), num2);
                     break;
                 case "*":
-                    result = Double.parseDouble(calc.multiply(Integer.parseInt(num1), num2));
+                    result = calc.multiply(Integer.parseInt(num1), num2);
                     break;
                 case "/":
-                    result = Double.parseDouble(calc.divide(Integer.parseInt(num1), num2));
+                    result = calc.divide(Integer.parseInt(num1), num2);
                     break;
                 default:
                     System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
