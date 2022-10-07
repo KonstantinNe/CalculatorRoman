@@ -1,13 +1,11 @@
 package ru.nemesh;
 
-import java.util.Scanner;
-
 public class Check {
-    public static int getInt(int a) {
-        Scanner scanner = new Scanner(System.in);
+    public static int getInt(String a) {
+  //      Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < 1; i++) {
             try {
-                if (a < 0) {
+                if (a.equals(0)) {
                     System.err.println("Число должно быть положительным!!!");
                     break;
                 }
@@ -15,9 +13,10 @@ public class Check {
                 e.printStackTrace();
                 System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
 
+                return Integer.parseInt(a);
             }
         }
-        return a;
+        return Integer.parseInt(a);
     }
 }
 
@@ -47,7 +46,7 @@ public class Check {
 
 
 //        }
-//        if (scanner.nextLine()) ;
+//        if (scanner.nextLine());
 //        int a = convert(scanner.nextLine());
 //        System.out.println("Все правильно, введена римская цифра");
 //        return a;

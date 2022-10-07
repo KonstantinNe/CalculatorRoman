@@ -9,12 +9,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");
         String input = scanner.nextLine();
-        while (input.equals(scanner.nextInt())) {
-            input = String.valueOf(Check.getInt(Integer.parseInt(input)));
-            if (input.equals(scanner.nextLine())) {
-                Convert.convertrom(input);
-                continue;
-            }
+//        while (input.equals(scanner.nextInt())) {
+//            input = String.valueOf(Check.getInt(Integer.parseInt(input)));
+//            if (input.equals(scanner.nextLine())) {
+//                Convert.convertrom(input);
+//                continue;
+//            }
             //            do {
 //                System.out.println("Ошибка, Введите положительные числа");
 //            } while (input.equals(" "));
@@ -22,6 +22,8 @@ public class Main {
             String[] mas = input.split(" ");
 
             String num1 = (mas[0]);
+            Check.getInt(num1);
+
             String operation = mas[1];
             int num2 = Integer.parseInt((mas[2]));
 
@@ -48,7 +50,6 @@ public class Main {
             System.out.println("Результат: " + result);
         }
     }
-}
 //}
 
 
