@@ -2,13 +2,13 @@ package ru.nemesh;
 
 public class Check {
         public static int getInt(String a) {
-            if (isNumeric("1")); // true
-            
-            isNumeric("I"); // false
-
+            if (a == String.valueOf(true));
             return Integer.parseInt(a);
+
+//            if (a == String.valueOf(false));
+//            return Integer.parseInt(a);
         }
-        public static boolean isNumeric(String a) {
+        public static boolean Numeric(String a) throws NumberFormatException {
             try {
                 Double.parseDouble(a);
                 return true;
