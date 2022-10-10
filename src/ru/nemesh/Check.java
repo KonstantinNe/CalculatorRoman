@@ -1,16 +1,15 @@
 package ru.nemesh;
 
 public class Check {
-        public static int getInt(String a) {
+        public static String getInt(String a) {
             Numeric(a);
             try {
-                if (a == String.valueOf(true)) ;
-                return Integer.parseInt(a);
+    //            if (a == String.valueOf(true)) ;
+                return String.valueOf(Integer.parseInt(a));
             } catch (NumberFormatException e) {
                 Convert.convertrom(a);
-          //      Rom calc = new Rom();
-               return Integer.parseInt((a));
             }
+            return a;
         }
 
             public static boolean Numeric(String a) {

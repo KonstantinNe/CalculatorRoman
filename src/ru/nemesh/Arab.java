@@ -21,6 +21,7 @@ public class Arab implements Calculator{
     public int divide(int a, int b) {
         return ((char) (a / b));
     }
+
 }
 //    public String plus(String a, String b) {
 //        return (a + b);

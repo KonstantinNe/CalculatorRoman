@@ -7,15 +7,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");
         String input = scanner.nextLine();
-//        while (input.equals(scanner.nextInt())) {
-//            input = String.valueOf(Check.getInt(Integer.parseInt(input)));
-//            if (input.equals(scanner.nextLine())) {
-//                Convert.convertrom(input);
-//                continue;
-//            }
-            //            do {
-//                System.out.println("Ошибка, Введите положительные числа");
-//            } while (input.equals(" "));
 
             String[] mas = input.split(" ");
 
@@ -27,27 +18,31 @@ public class Main {
             String num2 = (mas[2]);
             Check.getInt(num2);
 
-            Arab calc = new Arab();
+            Arab calc1 = new Arab();
+            Rom calc2 = new Rom();
             double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc2.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "-":
-                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc2.minus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "*":
-                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc1.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc2.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "/":
-                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc1.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc2.divide(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 default:
-                    System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
-                    System.exit(1);
             }
             System.out.println("Результат: " + result);
         }
+
     }
 //}
 
