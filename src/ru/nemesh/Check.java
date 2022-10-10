@@ -7,12 +7,12 @@ public class Check {
                 return Integer.parseInt(a);
             } catch (NumberFormatException e) {
                 Convert.convertrom(a);
-                Rom calc = new Rom();
-                return Integer.parseInt(a);
+          //      Rom calc = new Rom();
+               return Integer.parseInt((a));
             }
         }
 
-            public static boolean Numeric(String a) throws NumberFormatException {
+            public static boolean Numeric(String a) {
             try {
                 Double.parseDouble(a);
                 return true;
