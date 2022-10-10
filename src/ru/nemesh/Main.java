@@ -23,22 +23,24 @@ public class Main {
             Check.getInt(num1);
 
             String operation = mas[1];
-            int num2 = Integer.parseInt((mas[2]));
+
+            String num2 = (mas[2]);
+            Check.getInt(num2);
 
             Arab calc = new Arab();
             double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(Integer.parseInt(num1), num2);
+                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "-":
-                    result = calc.minus(Integer.parseInt(num1), num2);
+                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "*":
-                    result = calc.multiply(Integer.parseInt(num1), num2);
+                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "/":
-                    result = calc.divide(Integer.parseInt(num1), num2);
+                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 default:
                     System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
