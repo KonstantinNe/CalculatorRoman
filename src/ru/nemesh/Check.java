@@ -2,6 +2,7 @@ package ru.nemesh;
 
 public class Check {
         public static int getInt(String a) {
+            Numeric(a);
             try {
                 if (a == String.valueOf(true)) ;
                 return Integer.parseInt(a);
