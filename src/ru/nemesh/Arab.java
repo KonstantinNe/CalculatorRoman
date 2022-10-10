@@ -8,18 +8,18 @@ public class Arab implements Calculator{
     }
 
     @Override
-    public String minus(int a, int b) {
-        return String.valueOf((char) (a - b));
+    public int minus(int a, int b) {
+        return ((char) (a - b));
     }
 
     @Override
-    public String multiply(int a, int b) {
-        return String.valueOf((char) (a * b));
+    public int multiply(int a, int b) {
+        return ((char) (a * b));
     }
 
     @Override
-    public String divide(int a, int b) {
-        return String.valueOf((char) (a / b));
+    public int divide(int a, int b) {
+        return ((char) (a / b));
     }
 }
 //    public String plus(String a, String b) {

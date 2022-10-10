@@ -7,30 +7,38 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");
         String input = scanner.nextLine();
-        while (input.equals("exit"));
+//        while (input.equals(scanner.nextInt())) {
+//            input = String.valueOf(Check.getInt(Integer.parseInt(input)));
+//            if (input.equals(scanner.nextLine())) {
+//                Convert.convertrom(input);
+//                continue;
+//            }
+            //            do {
+//                System.out.println("Ошибка, Введите положительные числа");
+//            } while (input.equals(" "));
+
             String[] mas = input.split(" ");
 
             String num1 = (mas[0]);
-            Convert.convertrom(num1);
-            // num1 = Check.getInt();
+            Check.getInt(num1);
+
             String operation = mas[1];
-            String num2 = (mas[2]);
+            int num2 = Integer.parseInt((mas[2]));
 
             Arab calc = new Arab();
-          //  Rom calc1 = new Rom();
             double result = 0;
             switch (operation) {
                 case "+":
-                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.plus(Integer.parseInt(num1), num2);
                     break;
                 case "-":
-                    result = Double.parseDouble(calc.minus(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = calc.minus(Integer.parseInt(num1), num2);
                     break;
                 case "*":
-                    result = Double.parseDouble(calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = calc.multiply(Integer.parseInt(num1), num2);
                     break;
                 case "/":
-                    result = Double.parseDouble(calc.divide(Integer.parseInt(num1), Integer.parseInt(num2)));
+                    result = calc.divide(Integer.parseInt(num1), num2);
                     break;
                 default:
                     System.out.println("Ошибка, Вы не ввели оператор (+-*/)!!!");
