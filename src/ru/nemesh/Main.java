@@ -26,7 +26,6 @@ public class Main {
             int num2 = Integer.parseInt((mas[2]));
 
             Arab calc = new Arab();
-            //  Rom calc1 = new Rom();
             double result = 0;
             switch (operation) {
                 case "+":
