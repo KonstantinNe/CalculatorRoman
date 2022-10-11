@@ -22,7 +22,7 @@ public class Main {
 //        switch (calc) {
 //            case "+":
                  
-        if (scanner.hasNextInt());
+        if (num1.equals(1));
         Arab calc1 = new Arab();
         double result = 0;
         switch (operation) {
@@ -42,7 +42,7 @@ public class Main {
         }
         System.out.println("Результат: " + result);
 
-        if (scanner.hasNextLine());
+        if (num2.equals("I"));
         Rom calc2 = new Rom();
             switch (operation) {
                 case "+":
