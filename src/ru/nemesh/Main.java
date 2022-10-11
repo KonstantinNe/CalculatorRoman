@@ -18,24 +18,43 @@ public class Main {
             String num2 = (mas[2]);
             Check.getInt(num2);
 
-            Arab calc1 = new Arab();
-            Rom calc2 = new Rom();
-            double result = 0;
+//            String calc = new String();
+//        switch (calc) {
+//            case "+":
+                 
+        if (scanner.hasNextInt());
+        Arab calc1 = new Arab();
+        double result = 0;
+        switch (operation) {
+            case "+":
+                result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            case "-":
+                result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            case "*":
+                result = calc1.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            case "/":
+                result = calc1.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            default:
+        }
+        System.out.println("Результат: " + result);
+
+        if (scanner.hasNextLine());
+        Rom calc2 = new Rom();
             switch (operation) {
                 case "+":
-                    result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     result = calc2.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "-":
-                    result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
                     result = calc2.minus(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "*":
-                    result = calc1.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
                     result = calc2.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 case "/":
-                    result = calc1.divide(Integer.parseInt(num1), Integer.parseInt(num2));
                     result = calc2.divide(Integer.parseInt(num1), Integer.parseInt(num2));
                     break;
                 default:

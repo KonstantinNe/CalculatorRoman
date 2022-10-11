@@ -1,15 +1,18 @@
 package ru.nemesh;
 
+import java.util.Scanner;
+
 public class Check {
-        public static String getInt(String a) {
+        public static int getInt(String a) {
+            Scanner scanner = new Scanner(System.in);
             Numeric(a);
             try {
     //            if (a == String.valueOf(true)) ;
-                return String.valueOf(Integer.parseInt(a));
+                return Integer.parseInt(a);
             } catch (NumberFormatException e) {
                 Convert.convertrom(a);
+                return Integer.parseInt(a);
             }
-            return a;
         }
 
             public static boolean Numeric(String a) {
