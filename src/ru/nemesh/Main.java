@@ -42,7 +42,7 @@ public class Main {
         }
         System.out.println("Результат: " + result);
 
-        if (num2.equals("I"));
+        if (num1.equals("I"));
         Rom calc2 = new Rom();
             switch (operation) {
                 case "+":

@@ -10,7 +10,7 @@ public class Check {
     //            if (a == String.valueOf(true)) ;
                 return Integer.parseInt(a);
             } catch (NumberFormatException e) {
-                Convert.convertrom(a);
+                Convert.convertarab(a);
                 return Integer.parseInt(a);
             }
         }
