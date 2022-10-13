@@ -4,7 +4,7 @@ public class Convert {
 
     static int convertarab(String a) {
 
-            if (a.equals("I")) return Integer.parseInt("1");
+            if (a.equals("I")) return Integer.parseInt("1");     //проверяем в строке римская или нет и конвертируем в арабскую
             if (a.equals("II")) return Integer.parseInt("2");
             if (a.equals("III")) return Integer.parseInt("3");
             if (a.equals("IV")) return Integer.parseInt("4");
@@ -19,7 +19,7 @@ public class Convert {
         }
     static String convertrom(String a) {
 
-        if (a.equals(1)) return "I";
+        if (a.equals(1)) return "I";  //конвертируем в римские
         if (a.equals(2)) return "II";
         if (a.equals(3)) return "III";
         if (a.equals(4)) return "IV";
@@ -29,7 +29,6 @@ public class Convert {
         if (a.equals(8)) return "VIII";
         if (a.equals(9)) return "IX";
         if (a.equals(10)) return "X";
-        System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
         return a;
     }
 }

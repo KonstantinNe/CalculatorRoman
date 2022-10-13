@@ -5,28 +5,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите положительные числа и нужный оператор (+/*-):");
-        String input = scanner.nextLine();
+        System.out.println("Введите положительные числа и нужный оператор (+/*-):");         //Ввод числа в консоль
+        String input = scanner.nextLine(); //сканируем строку
 
-            String[] mas = input.split(" ");
+            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
-            String num1 = (mas[0]);
-            Check.getInt(num1);
+            String num1 = (mas[0]);   //  первая строка
+            Check.getInt(num1);  //  отправляем проверять в check
 
-            String operation = mas[1];
+            String operation = mas[1];  //  вторая строка
 
-            String num2 = (mas[2]);
-            Check.getInt(num2);
+            String num2 = (mas[2]);  //  третья строка
+            Check.getInt(num2);  //   отправляем проверять в check
 
-//            String calc = new String();
-//        switch (calc) {
-//            case "+":
+
                  
-        if (num1.equals(1));
-        Arab calc1 = new Arab();
+        if (num1.equals(1));      //если арабская цифра применяем калькулятор араб
+        Arab calc1 = new Arab();  // отправляем информцию в араб
         double result = 0;
         switch (operation) {
-            case "+":
+            case "+":             //если плюс то будет поведение такое поведение
                 result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                 break;
             case "-":
@@ -41,29 +39,35 @@ public class Main {
             default:
         }
         System.out.println("Результат: " + result);
-
-        if (num1.equals("I"));
-        Rom calc2 = new Rom();
-            switch (operation) {
-                case "+":
-                    result = calc2.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "-":
-                    result = calc2.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "*":
-                    result = calc2.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "/":
-                    result = calc2.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                default:
-            }
-            System.out.println("Результат: " + result);
+//
+//        if (num1.equals("I"));
+//        Rom calc2 = new Rom();
+//            switch (operation) {
+//                case "+":
+//                    result = calc2.plus(num1, num2);
+//                    break;
+//                case "-":
+//                    result = calc2.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+//                    break;
+//                case "*":
+//                    result = calc2.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+//                    break;
+//                case "/":
+//                    result = calc2.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+//                    break;
+//                default:
+//            }
+//            System.out.println("Результат: " + result);
         }
 
     }
-//}
+
+
+
+
+
+
+
 
 
 

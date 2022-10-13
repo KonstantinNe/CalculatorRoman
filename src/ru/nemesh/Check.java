@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Check {
         public static int getInt(String a) {
-            Scanner scanner = new Scanner(System.in);
-            Numeric(a);
+   //         Scanner scanner = new Scanner(System.in);
+            Numeric(a);          //принимаем строку и проверяем в boolean, если возращается истина то return, если нет то catch
             try {
     //            if (a == String.valueOf(true)) ;
                 return Integer.parseInt(a);
-            } catch (NumberFormatException e) {
-                Convert.convertarab(a);
-                return Integer.parseInt(a);
+            } catch (NumberFormatException e) { //ошибка если строка не число, отправляем в convert
+                Convert.convertarab(a);         //проверяем есть ли римские в строке
+                return Integer.parseInt(a);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
             }
         }
 
             public static boolean Numeric(String a) {
             try {
-                Double.parseDouble(a);
+                Double.parseDouble(a);    //если число то возвращаем истина
                 return true;
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {  //если не число то возвращаем ложь
                 return false;
             }
         }
