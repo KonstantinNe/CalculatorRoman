@@ -11,7 +11,7 @@ public class Main {
             String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
             String num1 = (mas[0]);   //  первая строка
-            Check.getInt(num1);  //  отправляем проверять в check
+            Check.getInt(num1) = resultGetInt;  //  отправляем проверять в check
 
             String operation = mas[1];  //  вторая строка
 
