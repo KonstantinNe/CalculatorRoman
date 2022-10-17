@@ -2,7 +2,7 @@ package ru.nemesh;
 
 public interface Calculator {
 
-     char plus(int a, int b);
+     String plus(int a, int b);
 
      int minus(int a, int b);
 

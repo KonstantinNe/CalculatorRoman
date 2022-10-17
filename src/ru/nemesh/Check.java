@@ -2,15 +2,16 @@ package ru.nemesh;
 
 public class Check {
         public static int getInt(String a) {
-
                  try {
                     boolean resultNumeric = Numeric(a);
                     if (a == String.valueOf(true));
                     int b = Integer.parseInt(a);
                 return b;
             } catch (NumberFormatException e) { //ошибка если строка не число, отправляем в convert
-                Convert.convertarab(a);         //проверяем есть ли римские в строке
-                return Integer.parseInt(a);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
+                Convert.checkRom(a);         //проверяем есть ли римские в строке
+                     if (a.equals(false));
+                     String c = a;
+                return Integer.parseInt(c);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
             }
         }
 

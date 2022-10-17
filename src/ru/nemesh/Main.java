@@ -11,21 +11,24 @@ public class Main {
             String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
             String num1 = (mas[0]);   //  первая строка
-            Check.getInt(num1) = resultGetInt;  //  отправляем проверять в check
+            int a = Check.getInt(num1);  //  отправляем проверять в check
+
 
             String operation = mas[1];  //  вторая строка
 
             String num2 = (mas[2]);  //  третья строка
-            Check.getInt(num2);  //   отправляем проверять в check
+            int b = Check.getInt(num2);  //   отправляем проверять в check
 
 
                  
-        if (num1.equals(1));      //если арабская цифра применяем калькулятор араб
+        //if (num1.equals(1));      //если арабская цифра применяем калькулятор араб
         Arab calc1 = new Arab();  // отправляем информцию в араб
+//        num1 = String.valueOf(a);
+//        num2 = String.valueOf(b);
         double result = 0;
         switch (operation) {
             case "+":             //если плюс то будет поведение такое поведение
-                result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                result = Double.parseDouble(calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2)));
                 break;
             case "-":
                 result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
