@@ -2,8 +2,8 @@ package ru.nemesh;
 
 public class Rom implements Calculator{
     @Override
-    public String plus(int a, int b) {
-        return String.valueOf(Convert.convertToArab(String.valueOf(a)) + Convert.convertToArab(String.valueOf(b)));
+    public char plus(int a, int b) {
+        return (char) (Convert.convertToArab(String.valueOf(a)) + Convert.convertToArab(String.valueOf(b)));
     }
 
     @Override

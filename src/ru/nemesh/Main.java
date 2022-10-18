@@ -28,7 +28,7 @@ public class Main {
         double result = 0;
         switch (operation) {
             case "+":             //если плюс то будет поведение такое поведение
-                result = Double.parseDouble(calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2)));
+                result = calc1.plus (Integer.parseInt(num1), Integer.parseInt(num2));
                 break;
             case "-":
                 result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
