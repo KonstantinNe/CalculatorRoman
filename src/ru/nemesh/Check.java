@@ -1,28 +1,46 @@
 package ru.nemesh;
 
-import java.util.Scanner;
-
 public class Check {
         public static int getInt(String a) {
-   //         Scanner scanner = new Scanner(System.in);
-            Numeric(a);          //принимаем строку и проверяем в boolean, если возращается истина то return, если нет то catch
-            try {
-    //            if (a == String.valueOf(true)) ;
-                return Integer.parseInt(a);
-            } catch (NumberFormatException e) { //ошибка если строка не число, отправляем в convert
-                Convert.convertarab(a);         //проверяем есть ли римские в строке
-                return Integer.parseInt(a);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
+            boolean resultNumeric = Numeric(a);
+                if (resultNumeric == (true)) {
+                //           try {
+ //               if (a == String.valueOf(true)) ;
+                int b = Integer.parseInt(a);
+                return b;
+            } else {
+                if (resultNumeric == (false)) ;
+                checkRom(a);
+      //          if (a == String.valueOf(true)) ;
+      //          return Integer.parseInt(a);
+                //             return Integer.parseInt(c);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
             }
+            return 0;
         }
+    private static String checkRom(String a) {
+        if (a.equals("I")) return "I";     //проверяем в строке римская или нет
+        if (a.equals("II")) return "II";
+        if (a.equals("III")) return "III";
+        if (a.equals("IV")) return "IV";
+        if (a.equals("V")) return "V";
+        if (a.equals("VI")) return "VI";
+        if (a.equals("VII")) return "VII";
+        if (a.equals("VIII")) return "VIII";
+        if (a.equals("IX")) return "IX";
+        if (a.equals("X")) return "X";
+        System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
+        return a;
 
-            public static boolean Numeric(String a) {
-            try {
-                Double.parseDouble(a);    //если число то возвращаем истина
-                return true;
-            } catch (NumberFormatException e) {  //если не число то возвращаем ложь
-                return false;
-            }
+    }
+
+    public static boolean Numeric(String a) {
+        try {
+            Double.parseDouble(a);    //если число то возвращаем истина/ реализация не правильная, почитать
+            return true;
+        } catch (NumberFormatException e) {  //если не число то возвращаем ложь
+            return false;
         }
+    }
     }
     //      Scanner scanner = new Scanner(System.in);
 //        for (int i = 0; i < 1; i++) {

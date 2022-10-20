@@ -8,59 +8,50 @@ public class Main {
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");         //Ввод числа в консоль
         String input = scanner.nextLine(); //сканируем строку
 
-            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+        String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
-            String num1 = (mas[0]);   //  первая строка
-            Check.getInt(num1);  //  отправляем проверять в check
-
-            String operation = mas[1];  //  вторая строка
-
-            String num2 = (mas[2]);  //  третья строка
-            Check.getInt(num2);  //   отправляем проверять в check
+        String num1 = (mas[0]);   //  первая строка
+        int a = Check.getInt(num1);  //  отправляем проверять в check
 
 
-                 
-        if (num1.equals(1));      //если арабская цифра применяем калькулятор араб
-        Arab calc1 = new Arab();  // отправляем информцию в араб
-        double result = 0;
-        switch (operation) {
-            case "+":             //если плюс то будет поведение такое поведение
-                result = calc1.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            case "-":
-                result = calc1.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            case "*":
-                result = calc1.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            case "/":
-                result = calc1.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            default:
+        String operation = mas[1];  //  вторая строка
+
+        String num2 = (mas[2]);  //  третья строка
+        int b = Check.getInt(num2);  //   отправляем проверять в check
+
+
+        if (a > 0) {      //если арабская цифра применяем калькулятор араб
+            Calculator Arab = new Arab();
+            Calculator.calcResult();
+            //      Arab calc = new Arab();  // отправляем информцию в араб
+        } else {
+            if (a == 0) ;
+            Calculator Rom = new Rom();
+            Calculator.calcResult();
         }
-        System.out.println("Результат: " + result);
-//
-//        if (num1.equals("I"));
-//        Rom calc2 = new Rom();
-//            switch (operation) {
-//                case "+":
-//                    result = calc2.plus(num1, num2);
-//                    break;
-//                case "-":
-//                    result = calc2.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-//                    break;
-//                case "*":
-//                    result = calc2.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-//                    break;
-//                case "/":
-//                    result = calc2.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-//                    break;
-//                default:
-//            }
-//            System.out.println("Результат: " + result);
-        }
-
     }
+        public void calcResult () {
+            Calculator calc = null;
+            double result = 0;
+            switch (operation) {
+                case "+":             //если плюс то будет поведение такое поведение
+                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "-":
+                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "*":
+                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "/":
+                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                default:
+            }
+            System.out.println("Результат: " + result);
+        }
+    }
+
 
 
 
