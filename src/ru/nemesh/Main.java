@@ -19,18 +19,19 @@ public class Main {
         String num2 = (mas[2]);  //  третья строка
         int b = Check.getInt(num2);  //   отправляем проверять в check
 
+        Calculator calc = null;
+        calc = Check.getCalc(calc);
 
-        if (a > 0) {      //если арабская цифра применяем калькулятор араб
-            Calculator Arab = new Arab();
-            Calculator.calcResult();
-            //      Arab calc = new Arab();  // отправляем информцию в араб
-        } else {
-            if (a == 0) ;
-            Calculator Rom = new Rom();
-            Calculator.calcResult();
-        }
-    }
-        public void calcResult () {
+//        if (a > 0) {      //если арабская цифра применяем калькулятор араб
+//            Calculator calc = new Arab();
+//            //          Calculator.calcResult();
+//            //      Arab calc = new Arab();  // отправляем информцию в араб
+//        } else {
+//            if (a == 0) ;
+//            Calculator calc = new Rom();
+//           // Calculator.calcResult();
+//        }
+
             Calculator calc = null;
             double result = 0;
             switch (operation) {

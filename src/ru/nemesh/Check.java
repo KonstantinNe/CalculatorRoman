@@ -1,22 +1,23 @@
 package ru.nemesh;
 
 public class Check {
-        public static int getInt(String a) {
-            boolean resultNumeric = Numeric(a);
-                if (resultNumeric == (true)) {
-                //           try {
- //               if (a == String.valueOf(true)) ;
-                int b = Integer.parseInt(a);
-                return b;
-            } else {
-                if (resultNumeric == (false)) ;
-                checkRom(a);
-      //          if (a == String.valueOf(true)) ;
-      //          return Integer.parseInt(a);
-                //             return Integer.parseInt(c);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
-            }
-            return 0;
+    public static int getInt(String a) {
+        boolean resultNumeric = Numeric(a);
+        if (resultNumeric == (true)) {
+            //           try {
+            //               if (a == String.valueOf(true)) ;
+            int b = Integer.parseInt(a);
+            return b;
+        } else {
+            if (resultNumeric == (false)) ;
+            checkRom(a);
+            //          if (a == String.valueOf(true)) ;
+            //          return Integer.parseInt(a);
+            //             return Integer.parseInt(c);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
         }
+        return 0;
+    }
+
     private static String checkRom(String a) {
         if (a.equals("I")) return "I";     //проверяем в строке римская или нет
         if (a.equals("II")) return "II";
@@ -41,7 +42,18 @@ public class Check {
             return false;
         }
     }
+
+    public static Calculator getCalc(Calculator calc) {
+        if (Numeric == (true)) {
+            Calculator calc = new Arab();
+            return Arab;
+        } else {
+            if (Numeric == (false))
+            Calculator calc = new Rom();
+            return Rom;
+        }
     }
+}
     //      Scanner scanner = new Scanner(System.in);
 //        for (int i = 0; i < 1; i++) {
 //            try {
