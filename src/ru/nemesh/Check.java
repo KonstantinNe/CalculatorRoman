@@ -4,17 +4,12 @@ public class Check {
     public static int getInt(String a) {
         boolean resultNumeric = Numeric(a);
         if (resultNumeric == (true)) {
-            //           try {
-            //               if (a == String.valueOf(true)) ;
             int b = Integer.parseInt(a);
             return b;
         } else {
             if (resultNumeric == (false)) ;
             checkRom(a);
-            //          if (a == String.valueOf(true)) ;
-            //          return Integer.parseInt(a);
-            //             return Integer.parseInt(c);   // если вернулась римская с конверта, возвращаем в Main-num1,num2
-        }
+            }
         return 0;
     }
 
@@ -44,13 +39,15 @@ public class Check {
     }
 
     public static Calculator getCalc(Calculator calc) {
-        if (Numeric == (true)) {
-            Calculator calc = new Arab();
-            return Arab;
+        boolean getNumeric;
+            if (getNumeric = true) {
+            calc = new Arab();
+            return calc;
         } else {
-            if (Numeric == (false))
-            Calculator calc = new Rom();
-            return Rom;
+      //      boolean Numeric = false;
+            if (getNumeric = false);
+            calc = new Rom();
+            return calc;
         }
     }
 }

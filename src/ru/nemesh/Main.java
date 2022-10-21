@@ -32,7 +32,7 @@ public class Main {
 //           // Calculator.calcResult();
 //        }
 
-            Calculator calc = null;
+        
             double result = 0;
             switch (operation) {
                 case "+":             //если плюс то будет поведение такое поведение
