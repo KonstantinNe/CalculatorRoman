@@ -38,14 +38,15 @@ public class Check {
         }
     }
 
-    public static Calculator getCalc(Calculator calc) {
-        boolean getNumeric;
-            if (getNumeric = true) {
+    public static Calculator getCalc(Calculator calc,int a) {
+        boolean getNumeric = Numeric(String.valueOf(a));
+        if (a > 0){
+ //          if (getNumeric = true) {
             calc = new Arab();
             return calc;
         } else {
       //      boolean Numeric = false;
-            if (getNumeric = false);
+            if (a == 0);
             calc = new Rom();
             return calc;
         }

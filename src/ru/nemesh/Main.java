@@ -20,7 +20,7 @@ public class Main {
         int b = Check.getInt(num2);  //   отправляем проверять в check
 
         Calculator calc = null;
-        calc = Check.getCalc(calc);
+        calc = Check.getCalc(calc,a);
 
 //        if (a > 0) {      //если арабская цифра применяем калькулятор араб
 //            Calculator calc = new Arab();
