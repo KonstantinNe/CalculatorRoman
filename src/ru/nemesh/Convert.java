@@ -7,47 +7,37 @@ public class Convert {
         if (a.equals("I")) {
             int b = Integer.parseInt(a);
             return b = 1;
-        }else {
-            if (a.equals("II")) ;
+        }else if (a.equals("II")){
             int b = Integer.parseInt(a);
             return b = 2;
-        }else{
-            if (a.equals("III")) ;
+        }else if (a.equals("III")) {
             int b = Integer.parseInt(a);
             return b = 3;
-        }else{
-            if (a.equals("IV"));
+        }else if (a.equals("IV")){
             int b = Integer.parseInt(a);
             return b = 4;
-        }else{
-            if (a.equals("V"));
+        }else if (a.equals("V")){
             int b = Integer.parseInt(a);
             return b = 4;
-        }else{
-            if (a.equals("VI"));
+        }else if (a.equals("VI")){
             int b = Integer.parseInt(a);
             return b = 6;
-        }else{
-            if (a.equals("VII"));
+        }else if (a.equals("VII")){
             int b = Integer.parseInt(a);
             return b = 7;
-        }else{
-            if (a.equals("VIII"));
+        }else if (a.equals("VIII")){
             int b = Integer.parseInt(a);
             return b = 8;
-        }else{
-            if (a.equals("IX"));
+        }else if (a.equals("IX")){
             int b = Integer.parseInt(a);
             return b = 9;
-        }else{
-            if (a.equals("X")) ;
+        }else if (a.equals("X")){
             int b = Integer.parseInt(a);
             return b = 10;
         }
             return Integer.parseInt(a);
         }
     }
-}
 
 //        do {
 //            System.out.println("Введите римскую цифру!");
