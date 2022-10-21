@@ -21,6 +21,7 @@ public class Main {
 
         Calculator calc = null;
         calc = Check.getCalc(calc,a);
+        
 
 //        if (a > 0) {      //если арабская цифра применяем калькулятор араб
 //            Calculator calc = new Arab();
