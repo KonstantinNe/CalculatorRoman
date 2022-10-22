@@ -10,9 +10,9 @@ public class Check {
         } else {
             if (resultNumeric == (false)) ;
             checkRom(a);
-            c = Convert.convertToArab(a);
+  //          c = Convert.convertToArab(a);
         }
-        return c;
+        return Integer.parseInt(a);
     }
 
     private static String checkRom(String a) {
@@ -40,7 +40,7 @@ public class Check {
         }
     }
 
-    public static Calculator getCalc(Calculator calc,int a) {
+    public static Calculator getCalc(Calculator calc, int a, int b) {
         boolean getNumeric = Numeric(String.valueOf(a));
         if (a > 0){
             calc = new Arab();
