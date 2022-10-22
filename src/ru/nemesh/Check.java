@@ -3,14 +3,16 @@ package ru.nemesh;
 public class Check {
     public static int getInt(String a) {
         boolean resultNumeric = Numeric(a);
+        int c;
         if (resultNumeric == (true)) {
             int b = Integer.parseInt(a);
             return b;
         } else {
             if (resultNumeric == (false)) ;
             checkRom(a);
-            }
-        return 0;
+            c = Convert.convertToArab(a);
+        }
+        return c;
     }
 
     private static String checkRom(String a) {
