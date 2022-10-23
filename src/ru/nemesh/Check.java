@@ -9,7 +9,8 @@ public class Check {
         } else {
             if (resultNumeric == (false)) ;
             checkRom(a);
-            }
+  //          c = Convert.convertToArab(a);
+        }
         return 0;
     }
 
@@ -38,16 +39,26 @@ public class Check {
         }
     }
 
-    public static Calculator getCalc(Calculator calc,int a) {
-        boolean getNumeric = Numeric(String.valueOf(a));
-        if (a > 0){
+    public static Calculator getCalc(Calculator calc, String a, String b) {
+        try {
+            Double.parseDouble(a);
+            Double.parseDouble(b);
             calc = new Arab();
             return calc;
-        } else {
-            if (a == 0);
+        } catch (NumberFormatException e) {
             calc = new Rom();
             return calc;
         }
+
+//        boolean getNumeric = Numeric(String.valueOf(a));
+//        if (a > 0){
+//            calc = new Arab();
+//            return calc;
+//        } else {
+//            if (a == 0);
+//            calc = new Rom();
+//            return calc;
+//        }
     }
 }
     //      Scanner scanner = new Scanner(System.in);
