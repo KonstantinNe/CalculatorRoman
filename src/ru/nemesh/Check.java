@@ -3,7 +3,6 @@ package ru.nemesh;
 public class Check {
     public static int getInt(String a) {
         boolean resultNumeric = Numeric(a);
-        int c;
         if (resultNumeric == (true)) {
             int b = Integer.parseInt(a);
             return b;
@@ -12,7 +11,7 @@ public class Check {
             checkRom(a);
   //          c = Convert.convertToArab(a);
         }
-        return Integer.parseInt(a);
+        return 0;
     }
 
     private static String checkRom(String a) {
@@ -40,16 +39,26 @@ public class Check {
         }
     }
 
-    public static Calculator getCalc(Calculator calc, int a, int b) {
-        boolean getNumeric = Numeric(String.valueOf(a));
-        if (a > 0){
+    public static Calculator getCalc(Calculator calc, String a, String b) {
+        try {
+            Double.parseDouble(a);
+            Double.parseDouble(b);
             calc = new Arab();
             return calc;
-        } else {
-            if (a == 0);
+        } catch (NumberFormatException e) {
             calc = new Rom();
             return calc;
         }
+
+//        boolean getNumeric = Numeric(String.valueOf(a));
+//        if (a > 0){
+//            calc = new Arab();
+//            return calc;
+//        } else {
+//            if (a == 0);
+//            calc = new Rom();
+//            return calc;
+//        }
     }
 }
     //      Scanner scanner = new Scanner(System.in);
