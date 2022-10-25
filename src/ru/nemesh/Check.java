@@ -7,16 +7,6 @@ public class Check {
         boolean resultNumeric = Numeric(a);
         if (resultNumeric == (true)) {
             int b = Integer.parseInt(a);
-                try {
-                    b = Integer.parseInt(a);
-                    if (b < 0) ;
-                    //              throw new Exception("Число"+b+"должно быть положительным!!!");
-                } catch (Exception e) {
-                    //         if (b < 0);
-                    //           e.printStackTrace();
-                    System.out.println("Число должно быть положительным!!!");
-                    //     System.exit(1);
-                }
             return b;
         } else {
             if (resultNumeric == (false)) ;
