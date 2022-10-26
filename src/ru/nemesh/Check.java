@@ -1,5 +1,7 @@
 package ru.nemesh;
 
+import java.io.IOException;
+
 public class Check {
     public static int getInt(String a) {
         boolean resultNumeric = Numeric(a);
@@ -9,7 +11,7 @@ public class Check {
         } else {
             if (resultNumeric == (false)) ;
             checkRom(a);
-  //          c = Convert.convertToArab(a);
+            //          c = Convert.convertToArab(a)
         }
         return 0;
     }

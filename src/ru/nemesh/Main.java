@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        start();
+    }
+
+       private static void start() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");         //Ввод числа в консоль
         String input = scanner.nextLine(); //сканируем строку
@@ -12,16 +16,25 @@ public class Main {
 
         String num1 = (mas[0]);   //  первая строка
         int a = Check.getInt(num1);  //  отправляем проверять в check
+        if (a < 0) {
+            System.out.println("Число должно быть положительным!!!");
+            start();
+        } else {
+            if (a >= 0) ;
 
+            String operation = mas[1];  //  вторая строка
 
-        String operation = mas[1];  //  вторая строка
+            String num2 = (mas[2]);  //  третья строка
+            int b = Check.getInt(num2);  //   отправляем проверять в check
+            if (b < 0) {
+                System.out.println("Число должно быть положительным!!!");
+                start();
+            } else {
+                if (b >= 0) ;
 
-        String num2 = (mas[2]);  //  третья строка
-        int b = Check.getInt(num2);  //   отправляем проверять в check
+                Calculator calc = null;
+                calc = Check.getCalc(calc, num1, num2);
 
-        Calculator calc = null;
-        calc = Check.getCalc(calc, num1,num2);
-        
 
 //        if (a > 0) {      //если арабская цифра применяем калькулятор араб
 //            Calculator calc = new Arab();
@@ -33,26 +46,29 @@ public class Main {
 //           // Calculator.calcResult();
 //        }
 
-        
-            double result = 0;
-            switch (operation) {
-                case "+":             //если плюс то будет поведение такое поведение
-                    result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "-":
-                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "*":
-                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "/":
-                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                default:
+
+                double result = 0;
+                switch (operation) {
+                    case "+":             //если плюс то будет поведение такое поведение
+                        result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                        break;
+                    case "-":
+                        result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                        break;
+                    case "*":
+                        result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                        break;
+                    case "/":
+                        result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                        break;
+                    default:
+                }
+                System.out.println("Результат: " + result);
             }
-            System.out.println("Результат: " + result);
         }
     }
+}
+
 
 
 
