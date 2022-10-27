@@ -3,11 +3,9 @@ package ru.nemesh;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        start();
-    }
+    public static void main(String[] args) throws Exception {
+        boolean flag = true;
 
-       private static void start() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите положительные числа и нужный оператор (+/*-):");         //Ввод числа в консоль
         String input = scanner.nextLine(); //сканируем строку
@@ -16,21 +14,21 @@ public class Main {
 
         String num1 = (mas[0]);   //  первая строка
         int a = Check.getInt(num1);  //  отправляем проверять в check
-        if (a < 0) {
-            System.out.println("Число должно быть положительным!!!");
-            start();
-        } else {
-            if (a >= 0) ;
+//        if (a < 0) {
+//            System.out.println("Число должно быть положительным!!!");
+//            start();
+//        } else {
+//            if (a >= 0) ;
 
             String operation = mas[1];  //  вторая строка
 
             String num2 = (mas[2]);  //  третья строка
             int b = Check.getInt(num2);  //   отправляем проверять в check
-            if (b < 0) {
-                System.out.println("Число должно быть положительным!!!");
-                start();
-            } else {
-                if (b >= 0) ;
+//            if (b < 0) {
+//                System.out.println("Число должно быть положительным!!!");
+//                start();
+//            } else {
+//                if (b >= 0) ;
 
                 Calculator calc = null;
                 calc = Check.getCalc(calc, num1, num2);
@@ -66,8 +64,6 @@ public class Main {
                 System.out.println("Результат: " + result);
             }
         }
-    }
-}
 
 
 

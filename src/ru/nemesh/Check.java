@@ -1,12 +1,15 @@
 package ru.nemesh;
 
-import java.io.IOException;
 
 public class Check {
-    public static int getInt(String a) {
+    public static int getInt(String a) throws Exception {
         boolean resultNumeric = Numeric(a);
+        int b = Integer.parseInt(a);
         if (resultNumeric == (true)) {
-            int b = Integer.parseInt(a);
+                    if (b < 0) {
+                    throw new Exception("Число должно быть положительным!!!");
+                    return flag;
+                    }
             return b;
         } else {
             if (resultNumeric == (false)) ;
@@ -51,6 +54,16 @@ public class Check {
             calc = new Rom();
             return calc;
         }
+
+
+        //           for (int i = 1; i <= 10; i++) {
+//                try {
+        //                } catch (NullPointerException e) {
+//                    System.out.println(e.getMessage());
+//                    System.out.println("Число должно быть положительным!!!");
+//                }
+//            }
+
 
 //        boolean getNumeric = Numeric(String.valueOf(a));
 //        if (a > 0){
