@@ -13,8 +13,8 @@ public class Exception1 extends Throwable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Число должно быть положительным!!!");
-        } finally {
-            System.out.println("Inside bloсk finally");
+//        } finally {
+//            System.out.println("Inside bloсk finally");
         }
 //        if (b < 0) ;
 //        throw new Exception("Число должно быть положительным!!!");

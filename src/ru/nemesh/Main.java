@@ -13,12 +13,9 @@ public class Main {
         String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
         String num1 = (mas[0]);   //  первая строка
-        int a = Check.getInt(num1);  //  отправляем проверять в check
-//        if (a < 0) {
-//            System.out.println("Число должно быть положительным!!!");
-//            start();
-//        } else {
-//            if (a >= 0) ;
+        int a = Check.getInt(num1);//  отправляем проверять в check
+
+//           throw new Exception("Число должно быть положительным!!!");
 
             String operation = mas[1];  //  вторая строка
 

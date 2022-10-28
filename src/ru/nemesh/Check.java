@@ -4,34 +4,45 @@ package ru.nemesh;
 public class Check {
     public static int getInt(String a) throws Exception {
         boolean resultNumeric = Numeric(a);
-        int b = Integer.parseInt(a);
+
         if (resultNumeric == (true)) {
+            int b = Integer.parseInt(a);
                     if (b < 0) {
                     throw new Exception("Число должно быть положительным!!!");
-                    return flag;
+       //             return flag;
                     }
             return b;
         } else {
             if (resultNumeric == (false)) ;
-            checkRom(a);
+            int c = checkRom(a);
+            return c;
             //          c = Convert.convertToArab(a)
         }
-        return 0;
     }
 
-    private static String checkRom(String a) {
-        if (a.equals("I")) return "I";     //проверяем в строке римская или нет
-        if (a.equals("II")) return "II";
-        if (a.equals("III")) return "III";
-        if (a.equals("IV")) return "IV";
-        if (a.equals("V")) return "V";
-        if (a.equals("VI")) return "VI";
-        if (a.equals("VII")) return "VII";
-        if (a.equals("VIII")) return "VIII";
-        if (a.equals("IX")) return "IX";
-        if (a.equals("X")) return "X";
+    private static int checkRom(String a) {
+        int b = 1;
+        if (a.equals("I")) return b;
+        b = 2;
+        if (a.equals("II")) return b;
+        b = 3;
+        if (a.equals("III")) return b;
+        b = 4;
+        if (a.equals("IV")) return b;
+        b = 5;
+        if (a.equals("V")) return b;
+        b = 6;
+        if (a.equals("VI")) return b;
+        b = 7;
+        if (a.equals("VII")) return b;
+        b = 8;
+        if (a.equals("VIII")) return b;
+        b = 9;
+        if (a.equals("IX")) return b;
+        b = 10;
+        if (a.equals("X")) return b;
         System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
-        return a;
+        return Integer.parseInt(a);
 
     }
 
