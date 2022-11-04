@@ -3,35 +3,31 @@ package ru.nemesh;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) throws Exception {
-        boolean flag = true;
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите положительные числа и нужный оператор (+/*-):");         //Ввод числа в консоль
-        String input = scanner.nextLine(); //сканируем строку
+        NegativeNumber negative = new NegativeNumber();
+        try {
+            boolean a;
+            Number number = negative.find(a = true);
+        } catch (Exception1 exception1) {
 
-        String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+            System.out.println("Введите положительные числа и нужный оператор (+/*-):");
 
-        String num1 = (mas[0]);   //  первая строка
-        int a = Check.getInt(num1);  //  отправляем проверять в check
-//        if (a < 0) {
-//            System.out.println("Число должно быть положительным!!!");
-//            start();
-//        } else {
-//            if (a >= 0) ;
+            String input = scanner.nextLine(); //сканируем строку
+
+            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+
+            String num1 = (mas[0]);   //  первая строка
+            int a = Check.getInt(num1);//  отправляем проверять в check
 
             String operation = mas[1];  //  вторая строка
 
             String num2 = (mas[2]);  //  третья строка
             int b = Check.getInt(num2);  //   отправляем проверять в check
-//            if (b < 0) {
-//                System.out.println("Число должно быть положительным!!!");
-//                start();
-//            } else {
-//                if (b >= 0) ;
 
-                Calculator calc = null;
-                calc = Check.getCalc(calc, num1, num2);
+            Calculator calc = null;
+            calc = Check.getCalc(calc, num1, num2);
 
 
 //        if (a > 0) {      //если арабская цифра применяем калькулятор араб
@@ -45,26 +41,29 @@ public class Main {
 //        }
 
 
-                double result = 0;
-                switch (operation) {
-                    case "+":             //если плюс то будет поведение такое поведение
-                        result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                        break;
-                    case "-":
-                        result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                        break;
-                    case "*":
-                        result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                        break;
-                    case "/":
-                        result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-                        break;
-                    default:
-                }
-                System.out.println("Результат: " + result);
+            double result = 0;
+            switch (operation) {
+                case "+":             //если плюс то будет поведение такое поведение
+                    //                       result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.plus(a, b);
+                    break;
+                case "-":
+                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "*":
+                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "/":
+                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                default:
             }
+            System.out.println("Результат: " + result);
+
         }
 
+    }
+}
 
 
 
