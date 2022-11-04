@@ -1,16 +1,16 @@
 package ru.nemesh;
 
-
 public class Check {
+
     public static int getInt(String a) throws Exception {
         boolean resultNumeric = Numeric(a);
 
         if (resultNumeric == (true)) {
-            int b = Integer.parseInt(a);
-                    if (b < 0) {
-                    throw new Exception("Число должно быть положительным!!!");
-       //             return flag;
-                    }
+           int b = Integer.parseInt(a);
+//                    if (b < 0) {
+//                    throw new Exception("Число должно быть положительным!!!");
+
+//                    }
             return b;
         } else {
             if (resultNumeric == (false)) ;
