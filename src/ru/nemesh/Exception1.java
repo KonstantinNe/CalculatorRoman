@@ -2,19 +2,13 @@ package ru.nemesh;
 
 import java.io.IOException;
 
-//public class Exception1 {
-//    public NegativeNumber find(int a) NegativeNumberNotFoundException;
-//    if(a < 0)
-//
-//    {
-//        return new NegativeNumber();
-//    } else
-//
-//    {
-//        throw new NegativeNumberNotFoundException(
-//                "Число должно быть положительным!!!");
-//    }
-//}
+public class Exception1 extends Exception {
+
+    public Exception1 (String message) {
+        super(message);
+    }
+}
+
     
 
 

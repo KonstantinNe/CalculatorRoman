@@ -7,10 +7,9 @@ public class Check {
 
         if (resultNumeric == (true)) {
            int b = Integer.parseInt(a);
-//                    if (b < 0) {
-//                    throw new Exception("Число должно быть положительным!!!");
-
-//                    }
+                    if (b < 0) {
+                    throw new Exception("Число должно быть положительным!!!");
+                    }
             return b;
         } else {
             if (resultNumeric == (false)) ;
@@ -20,7 +19,7 @@ public class Check {
         }
     }
 
-    private static int checkRom(String a) {
+    private static int checkRom(String a) throws Exception {
         int b = 1;
         if (a.equals("I")) return b;
         b = 2;
@@ -41,8 +40,7 @@ public class Check {
         if (a.equals("IX")) return b;
         b = 10;
         if (a.equals("X")) return b;
-        System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
-        return Integer.parseInt(a);
+        throw new Exception("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
 
     }
 
