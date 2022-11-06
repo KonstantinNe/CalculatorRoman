@@ -9,7 +9,7 @@ public class Check {
             int b = Integer.parseInt(a);
             boolean c = NegativeNumber(Integer.parseInt(a));
             if (c == true) {
-                throw new Exception1("Число должно быть положительным!!!");
+                throw new NegativeException("Число должно быть положительным!!!");
             } else
                 return b;
         } else {
