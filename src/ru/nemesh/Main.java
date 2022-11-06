@@ -6,11 +6,12 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        NegativeNumber negative = new NegativeNumber();
-        try {
-            boolean a;
-            Number number = negative.find(a = true);
-        } catch (Exception1 exception1) {
+        Check negative = new Check();
+        int a = 0;
+        int b = 0;
+ //       try {
+//            boolean c = true;
+//        } catch (Exception ex) {
 
             System.out.println("Введите положительные числа и нужный оператор (+/*-):");
 
@@ -19,12 +20,12 @@ public class Main {
             String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
             String num1 = (mas[0]);   //  первая строка
-            int a = Check.getInt(num1);//  отправляем проверять в check
+            a = Check.getInt(num1);
 
             String operation = mas[1];  //  вторая строка
 
             String num2 = (mas[2]);  //  третья строка
-            int b = Check.getInt(num2);  //   отправляем проверять в check
+            b = Check.getInt(num2);
 
             Calculator calc = null;
             calc = Check.getCalc(calc, num1, num2);
@@ -63,7 +64,7 @@ public class Main {
         }
 
     }
-}
+
 
 
 
