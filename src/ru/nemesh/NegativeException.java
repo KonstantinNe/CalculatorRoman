@@ -1,10 +1,8 @@
 package ru.nemesh;
 
-import java.io.IOException;
+public class NegativeException extends Exception {
 
-public class Exception1 extends Exception {
-
-    public Exception1 (String message) {
+    public NegativeException (String message) {
         super(message);
     }
 }

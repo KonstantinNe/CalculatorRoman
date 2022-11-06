@@ -2,20 +2,20 @@ package ru.nemesh;
 
 public class Check {
 
-    public static int getInt(String a) throws Exception {
+    public static int getInt (String a) throws Exception {
         boolean resultNumeric = Numeric(a);
 
         if (resultNumeric == (true)) {
-           int b = Integer.parseInt(a);
-                    if (b < 0) {
-                    throw new Exception("Число должно быть положительным!!!");
-                    }
-            return b;
+            int b = Integer.parseInt(a);
+            boolean c = NegativeNumber(Integer.parseInt(a));
+            if (c == true) {
+                throw new NegativeException("Число должно быть положительным!!!");
+            } else
+                return b;
         } else {
             if (resultNumeric == (false)) ;
             int c = checkRom(a);
             return c;
-            //          c = Convert.convertToArab(a)
         }
     }
 
@@ -63,6 +63,31 @@ public class Check {
             calc = new Rom();
             return calc;
         }
+    }
+
+    private static boolean NegativeNumber (int a) {
+//        boolean resultNumber = Numeric(String.valueOf(a));
+//        public resultNumber find (int a)
+
+        if (a < 0) {
+            return true;
+        } else {
+            //              if (resultNumber == (false)) ;
+            return false;
+        }
+    }
+
+    public void find(boolean b) {
+    }
+}
+
+//                public static boolean Number(int a){
+//                    try {
+//                        if (a < 0) ;    //если число то возвращаем истина/ реализация не правильная, почитать
+//                        return true;
+//                    } catch (NumberFormatException e) {  //если не число то возвращаем ложь
+//                        return false;
+//                    }
 
 
         //           for (int i = 1; i <= 10; i++) {
@@ -83,8 +108,8 @@ public class Check {
 //            calc = new Rom();
 //            return calc;
 //        }
-    }
-}
+//    }
+//}
     //      Scanner scanner = new Scanner(System.in);
 //        for (int i = 0; i < 1; i++) {
 //            try {
