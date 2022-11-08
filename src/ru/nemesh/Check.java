@@ -14,8 +14,7 @@ public class Check {
                 return b;
         } else {
             if (resultNumeric == (false)) ;
-            int c = checkRom(a);
-            return c;
+            return checkRom(a);
         }
     }
 
@@ -40,7 +39,7 @@ public class Check {
         if (a.equals("IX")) return b;
         b = 10;
         if (a.equals("X")) return b;
-        throw new Exception("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
+        throw new SymbolException("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
 
     }
 
@@ -77,8 +76,10 @@ public class Check {
         }
     }
 
-    public void find(boolean b) {
-    }
+//    public void find(boolean a) {
+//        if (a = true);
+//
+//    }
 }
 
 //                public static boolean Number(int a){

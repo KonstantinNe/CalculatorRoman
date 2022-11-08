@@ -1,32 +1,58 @@
 package ru.nemesh;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Check negative = new Check();
-        int a = 0;
-        int b = 0;
- //       try {
-//            boolean c = true;
+        //       int a = 0;
+//        int b = 0;
+//        boolean flag;
+//        try {
+//            flag = false;
 //        } catch (Exception ex) {
+//            System.out.println("Введите положительные числа и нужный оператор (+/*-):");
+//        }
+//        String text = "Число должно быть положительным!!!";
+//        Pattern pattern = Pattern.compile("А.+а");
+//        Matcher matcher = pattern.matcher(text);
 
-            System.out.println("Введите положительные числа и нужный оператор (+/*-):");
 
-            String input = scanner.nextLine(); //сканируем строку
+        System.out.println("Введите положительные числа и нужный оператор (+/*-):");
 
-            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+        String input = scanner.nextLine(); //сканируем строку
 
-            String num1 = (mas[0]);   //  первая строка
+        String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+
+        String num1 = (mas[0]);   //  первая строка
+        int a = 0;
+        try {
             a = Check.getInt(num1);
+        } catch (NegativeException e) {
+            System.out.println(e.getMessage());
+            main(null);
+        } catch (SymbolException e) {
+            System.out.println(e.getMessage());
+            main(null);
+        }
 
             String operation = mas[1];  //  вторая строка
 
             String num2 = (mas[2]);  //  третья строка
-            b = Check.getInt(num2);
-
+            int b = 0;
+            try {
+                b = Check.getInt(num2);
+            } catch (NegativeException e) {
+                System.out.println(e.getMessage());
+                main(null);
+            } catch (SymbolException e) {
+                System.out.println(e.getMessage());
+                main(null);
+            }
             Calculator calc = null;
             calc = Check.getCalc(calc, num1, num2);
 
@@ -61,11 +87,13 @@ public class Main {
             }
             System.out.println("Результат: " + result);
 
-        }
 
+        }
     }
 
 
+
+    
 
 
 
