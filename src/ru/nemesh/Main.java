@@ -48,11 +48,12 @@ public class Main {
                     System.out.println(e.getMessage());
                     //              main(null);
                 }
+            } while (a > 0);
+            flag = true;
+            
                 Calculator calc = null;
                 calc = Check.getCalc(calc, num1, num2);
 
-            } while (a > 0);
-            flag = true;
 
 
             double result = 0;
