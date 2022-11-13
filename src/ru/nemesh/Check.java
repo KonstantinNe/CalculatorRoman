@@ -2,7 +2,7 @@ package ru.nemesh;
 
 public class Check {
 
-    public static int getInt (String a) throws Exception {
+    public static int getInt(String a) throws Exception {
         boolean resultNumeric = Numeric(a);
 
         if (resultNumeric == (true)) {
@@ -20,8 +20,8 @@ public class Check {
 
     private static int checkRom(String a) throws Exception {
         int b;
- //       if (a.equals("I")) return Integer.parseInt("I");
- //      if (a.equals("II")) return Integer.parseInt("II");
+        //       if (a.equals("I")) return Integer.parseInt("I");
+        //      if (a.equals("II")) return Integer.parseInt("II");
         if (a.equals("I")) return b = 1;
         if (a.equals("II")) return b = 2;
         if (a.equals("III")) return b = 3;
@@ -57,7 +57,7 @@ public class Check {
         }
     }
 
-    private static boolean NegativeNumber (int a) {
+    private static boolean NegativeNumber(int a) {
 //        boolean resultNumber = Numeric(String.valueOf(a));
 //        public resultNumber find (int a)
 
@@ -68,90 +68,4 @@ public class Check {
             return false;
         }
     }
-
-//    public void find(boolean a) {
-//        if (a = true);
-//
-//    }
 }
-
-//                public static boolean Number(int a){
-//                    try {
-//                        if (a < 0) ;    //если число то возвращаем истина/ реализация не правильная, почитать
-//                        return true;
-//                    } catch (NumberFormatException e) {  //если не число то возвращаем ложь
-//                        return false;
-//                    }
-
-
-        //           for (int i = 1; i <= 10; i++) {
-//                try {
-        //                } catch (NullPointerException e) {
-//                    System.out.println(e.getMessage());
-//                    System.out.println("Число должно быть положительным!!!");
-//                }
-//            }
-
-
-//        boolean getNumeric = Numeric(String.valueOf(a));
-//        if (a > 0){
-//            calc = new Arab();
-//            return calc;
-//        } else {
-//            if (a == 0);
-//            calc = new Rom();
-//            return calc;
-//        }
-//    }
-//}
-    //      Scanner scanner = new Scanner(System.in);
-//        for (int i = 0; i < 1; i++) {
-//            try {
-//                if (a.equals(0)) {
-//                    System.err.println("Число должно быть положительным!!!");
-//                    break;
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
-//
-//                return Integer.parseInt(a);
-//            }
-//        }
-//        return Integer.parseInt(a);
-//    }
-
-
-//        for (int i = 0; i < 5; i++) {
-//            if (num1 > 0) {
-//        try {
-//            if (num1 <= 0);
-//            System.out.println("Число должно быть положительным!!! Введите число:");
-//            num1 = scanner.nextInt();
-//    }
-//            catch (Exception e) {
-//               System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
-//               break;
-//            }
-
-//            try {
-//                int a = scanner.nextInt();
-//                if (a < 0) {
-//                    System.err.println("Число должно быть положительным!!!");
-//                }
-//
-//            } catch (Exception e) {
-//                System.out.println("Ошибка! Вы ввели символ или букву, необходимо ввести цифру. Возможно Вы ввели римскую цифру, секунду сейчас проверим.....");
-//                break;
-
-
-
-//        }
-//        if (scanner.nextLine());
-//        int a = convert(scanner.nextLine());
-//        System.out.println("Все правильно, введена римская цифра");
-//        return a;
-//            }
-//
-//    }
-//    }
