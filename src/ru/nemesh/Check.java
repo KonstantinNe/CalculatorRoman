@@ -9,7 +9,7 @@ public class Check {
             int b = Integer.parseInt(a);
             boolean c = NegativeNumber(Integer.parseInt(a));
             if (c == true) {
-                throw new NegativeException("Число должно быть положительным!!!");
+                throw new NegativeException("Число должно быть положительным!!! Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
             } else
                 return b;
         } else {
@@ -19,27 +19,20 @@ public class Check {
     }
 
     private static int checkRom(String a) throws Exception {
-        int b = 1;
-        if (a.equals("I")) return b;
-        b = 2;
-        if (a.equals("II")) return b;
-        b = 3;
-        if (a.equals("III")) return b;
-        b = 4;
-        if (a.equals("IV")) return b;
-        b = 5;
-        if (a.equals("V")) return b;
-        b = 6;
-        if (a.equals("VI")) return b;
-        b = 7;
-        if (a.equals("VII")) return b;
-        b = 8;
-        if (a.equals("VIII")) return b;
-        b = 9;
-        if (a.equals("IX")) return b;
-        b = 10;
-        if (a.equals("X")) return b;
-        throw new SymbolException("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры!");
+        int b;
+ //       if (a.equals("I")) return Integer.parseInt("I");
+ //      if (a.equals("II")) return Integer.parseInt("II");
+        if (a.equals("I")) return b = 1;
+        if (a.equals("II")) return b = 2;
+        if (a.equals("III")) return b = 3;
+        if (a.equals("IV")) return b = 4;
+        if (a.equals("V")) return b = 5;
+        if (a.equals("VI")) return b = 6;
+        if (a.equals("VII")) return b = 7;
+        if (a.equals("VIII")) return b = 8;
+        if (a.equals("IX")) return b = 9;
+        if (a.equals("X")) return b = 10;
+        throw new SymbolException("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры! Или ввели цифры без пробела");
 
     }
 
