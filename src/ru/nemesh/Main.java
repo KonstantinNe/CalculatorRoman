@@ -6,60 +6,64 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        Check negative = new Check();
-        boolean flag = true;
-//        try {
-//           // throw new NegativeException("Число должно быть положительным!!!");
-//            a < 0;
-//        } catch () {
+        boolean flag;
+        int a = 0;
+        int b = 0;
+        String num1 = null;
+        String num2 = null;
+        String operation = null;
 
 
-        System.out.println("Введите положительные числа и нужный оператор (+/*-):");
-        {
+        System.out.println("Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
 
-            int a;
-            do {
-                String input = scanner.nextLine(); //сканируем строку
+        while (flag = true) {
 
-                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+            String input = scanner.nextLine(); //сканируем строку
 
-                String num1 = (mas[0]);   //  первая строка
-                a = 0;
-                try {
-                    a = Check.getInt(num1);
-                } catch (NegativeException e) {
-                    System.out.println(e.getMessage());
-                    //               main(null);
-                } catch (SymbolException e) {
-                    System.out.println(e.getMessage());
-                    //               main(null);
-                }
+            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
 
-                String operation = mas[1];  //  вторая строка
+            num1 = (mas[0]);   //  первая строка
+            a = 0;
+            try {
+                a = Check.getInt(num1);
+                flag = false;
+            } catch (NegativeException e) {
+                System.out.println(e.getMessage());
+                flag = true;
+                continue;
+            } catch (SymbolException e) {
+                System.out.println(e.getMessage());
+                flag = true;
+                continue;
+            }
 
-                String num2 = (mas[2]);  //  третья строка
-                int b = 0;
-                try {
-                    b = Check.getInt(num2);
-                } catch (NegativeException e) {
-                    System.out.println(e.getMessage());
-                    //               main(null);
-                } catch (SymbolException e) {
-                    System.out.println(e.getMessage());
-                    //              main(null);
-                }
-            } while (a > 0);
-            flag = true;
-            
-                Calculator calc = null;
-                calc = Check.getCalc(calc, num1, num2);
+            operation = mas[1];  //  вторая строка
 
+            num2 = (mas[2]);  //  третья строка
+            b = 0;
+            try {
+                b = Check.getInt(num2);
+                flag = false;
+            } catch (NegativeException e) {
+                System.out.println(e.getMessage());
+                flag = true;
+                continue;
+            } catch (SymbolException e) {
+                System.out.println(e.getMessage());
+                flag = true;
+                continue;
+            }
+            flag = false;
+                break;
+        }
+            Calculator calc = null;
+            calc = Check.getCalc(calc, num1, num2);
 
 
             double result = 0;
             switch (operation) {
                 case "+":             //если плюс то будет поведение такое поведение
-                    //                       result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+ //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
                     result = calc.plus(a, b);
                     break;
                 case "-":
@@ -74,10 +78,16 @@ public class Main {
                 default:
             }
             System.out.println("Результат: " + result);
-
         }
     }
-}
+
+    
+
+
+
+
+
+
 
 
 
