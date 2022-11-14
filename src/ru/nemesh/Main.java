@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static <getMessage> void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         boolean flag;
         int a = 0;
@@ -21,6 +21,14 @@ public class Main {
             String input = scanner.nextLine(); //сканируем строку
 
             String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+            String d = input;
+            try {
+                input = Check.getProbel(d);
+                flag = false;
+            } catch (ProbelException e) {
+                flag = true;
+                continue;
+            }
 
             num1 = (mas[0]);   //  первая строка
             a = 0;
@@ -54,32 +62,45 @@ public class Main {
                 continue;
             }
             flag = false;
+            break;
+        }
+        Calculator calc = null;
+        calc = Check.getCalc(calc, num1, num2);
+
+
+        double result = 0;
+        switch (operation) {
+            case "+":             //если плюс то будет поведение такое поведение
+                //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                result = calc.plus(a, b);
                 break;
+            case "-":
+                result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            case "*":
+                result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                break;
+            case "/":
+                result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
         }
-            Calculator calc = null;
-            calc = Check.getCalc(calc, num1, num2);
+        System.out.println("Результат: " + result);
+        System.out.println("Вы завершили работу? Да или Нет?");
+        String input = scanner.nextLine();
+//        if (input.equals("Да"));
+//            flag = false;
+//        //} else {
+//        if (input.equals("Нет")) ;
+//            flag = true;
+        try {
+            if (input.equals("Нет")) ;
+            flag = false;
 
-
-            double result = 0;
-            switch (operation) {
-                case "+":             //если плюс то будет поведение такое поведение
- //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    result = calc.plus(a, b);
-                    break;
-                case "-":
-                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "*":
-                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "/":
-                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                default:
-            }
-            System.out.println("Результат: " + result);
+        }catch{ (ProbelException){
+            System.out.println("До свидание!"));
         }
+
     }
+}
 
     
 
