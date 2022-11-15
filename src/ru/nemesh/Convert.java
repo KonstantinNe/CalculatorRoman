@@ -17,12 +17,3 @@ public class Convert {
         return Integer.parseInt(a);
         }
     }
-
-//        do {
-//            System.out.println("Введите римскую цифру!");
-//            scanner.nextLine();
-//            if (scanner.hasNextLine()) ;
-//            a = String.valueOf(convertrom(scanner.nextLine()));
-//            } while (a == String.valueOf(0));
-//        System.out.println("Все правильно, введена римская цифра");
-//  } finally {

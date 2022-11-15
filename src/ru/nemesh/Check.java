@@ -58,14 +58,18 @@ public class Check {
     }
 
     private static boolean NegativeNumber(int a) {
-//        boolean resultNumber = Numeric(String.valueOf(a));
-//        public resultNumber find (int a)
 
         if (a < 0) {
             return true;
         } else {
-            //              if (resultNumber == (false)) ;
             return false;
         }
+    }
+
+    public static String getProbel(String d) throws ProbelException {
+        if (d.equals(" ")){
+        throw new ProbelException("Ввод чисел и оператора должен быть через пробел (пример 2 + 3)");
+        } else
+            return d;
     }
 }

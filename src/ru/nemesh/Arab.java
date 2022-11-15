@@ -21,20 +21,3 @@ public class Arab implements Calculator{
     }
 
 }
-//    public String plus(String a, String b) {
-//        return (a + b);
-//    }
-//
-//    public char minus(String a, String b) {
-//        return char (a - b);
-//    }
-//
-//    public char multiply(String a, String b) {
-//
-//        return (char) (a * b);
-//    }
-//
-//    public char divide(String a, String b) {
-//
-//        return (char) (a / b);
-//    }
