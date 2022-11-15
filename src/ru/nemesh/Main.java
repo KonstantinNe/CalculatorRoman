@@ -12,13 +12,16 @@ public class Main {
         String num1 = null;
         String num2 = null;
         String operation = null;
+        String input = null;
 
+
+        do{
 
         System.out.println("Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
 
         while (flag = true) {
 
-            String input = scanner.nextLine(); //сканируем строку
+            input = scanner.nextLine(); //сканируем строку
 
             String[] mas = input.split(" ");  //  делим массив строку на части где пробел
             String d = input;
@@ -85,20 +88,13 @@ public class Main {
         }
         System.out.println("Результат: " + result);
         System.out.println("Вы завершили работу? Да или Нет?");
-        String input = scanner.nextLine();
-//        if (input.equals("Да"));
-//            flag = false;
-//        //} else {
-//        if (input.equals("Нет")) ;
-//            flag = true;
-        try {
-            if (input.equals("Нет")) ;
+        input = scanner.nextLine();
+
+            if (input.equals("Да"));
             flag = false;
 
-        }catch{ (ProbelException){
-            System.out.println("До свидание!"));
-        }
-
+        }while (input.equals("Нет"));
+                System.out.println("До свидание!");
     }
 }
 
