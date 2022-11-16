@@ -66,11 +66,11 @@ public class Check {
         }
     }
 
-    public static String getProbel(String d) throws ProbelException {
-        if (d.equals(" ")){
+    public static String getProbel(String input) throws ProbelException {
+        if (input.contains(" "))
+            return input;
+          else
         throw new ProbelException("Ввод чисел и оператора должен быть через пробел (пример 2 + 3)");
-        } else
-            return d;
     }
 
     public static String getExit(String input) throws ExitException {

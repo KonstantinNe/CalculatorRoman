@@ -23,11 +23,11 @@ public class Main {
                 input = scanner.nextLine(); //сканируем строку
 
                 String[] mas = input.split(" ");  //  делим массив строку на части где пробел
-                String d = input;
                 try {
-                    input = Check.getProbel(d);
+                    input = Check.getProbel(input);
                     flag = false;
                 } catch (ProbelException e) {
+                    System.out.println(e.getMessage());
                     flag = true;
                     continue;
                 }
