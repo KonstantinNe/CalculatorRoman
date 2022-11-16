@@ -72,4 +72,15 @@ public class Check {
         } else
             return d;
     }
-}
+
+    public static String getExit(String input) throws ExitException {
+        if (input.equals("Да"))
+            return input;
+            //throw new ExitException("Введите Да или Нет!");
+        if(input.equals("Нет"))
+            return input;
+        else
+            throw new ExitException("Введите Да или Нет!");
+        }
+
+    }
