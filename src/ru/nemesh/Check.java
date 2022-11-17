@@ -19,19 +19,19 @@ public class Check {
     }
 
     private static int checkRom(String a) throws Exception {
-        int b;
+      //  int b;
         //       if (a.equals("I")) return Integer.parseInt("I");
         //      if (a.equals("II")) return Integer.parseInt("II");
-        if (a.equals("I")) return b = 1;
-        if (a.equals("II")) return b = 2;
-        if (a.equals("III")) return b = 3;
-        if (a.equals("IV")) return b = 4;
-        if (a.equals("V")) return b = 5;
-        if (a.equals("VI")) return b = 6;
-        if (a.equals("VII")) return b = 7;
-        if (a.equals("VIII")) return b = 8;
-        if (a.equals("IX")) return b = 9;
-        if (a.equals("X")) return b = 10;
+        if (a.equals("I")) return 1;
+        if (a.equals("II")) return 2;
+//        if (a.equals("III")) return b = 3;
+//        if (a.equals("IV")) return b = 4;
+//        if (a.equals("V")) return b = 5;
+//        if (a.equals("VI")) return b = 6;
+//        if (a.equals("VII")) return b = 7;
+//        if (a.equals("VIII")) return b = 8;
+//        if (a.equals("IX")) return b = 9;
+//        if (a.equals("X")) return b = 10;
         throw new SymbolException("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры! Или ввели цифры без пробела");
 
     }
@@ -76,7 +76,7 @@ public class Check {
     public static String getExit(String input) throws ExitException {
         if (input.equals("Да"))
             return input;
-            //throw new ExitException("Введите Да или Нет!");
+
         if(input.equals("Нет"))
             return input;
         else

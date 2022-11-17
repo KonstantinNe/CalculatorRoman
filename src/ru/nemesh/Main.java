@@ -33,7 +33,6 @@ public class Main {
                 }
 
                 num1 = (mas[0]);   //  первая строка
-                a = 0;
                 try {
                     a = Check.getInt(num1);
                     flag = false;
@@ -50,9 +49,9 @@ public class Main {
                 operation = mas[1];  //  вторая строка
 
                 num2 = (mas[2]);  //  третья строка
-                b = 0;
+            //    b = 0;
                 try {
-                    b = Check.getInt(num2);
+                    b = (Check.getInt(num2));
                     flag = false;
                 } catch (NegativeException e) {
                     System.out.println(e.getMessage());
@@ -72,18 +71,22 @@ public class Main {
 
             double result = 0;
             switch (operation) {
-                case "+":             //если плюс то будет поведение такое поведение
-                    //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    result = calc.plus(a, b);
+                case "+":
+                     result = calc.plus(num1, num2);
+                    Calculator Rom = null;
+                    if (calc == Rom){
+                        String c = String.valueOf(result);
+                     c = (Convert.convertToRom((int) result));}
                     break;
                 case "-":
-                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.minus(num1, num2);
                     break;
                 case "*":
-                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.multiply(num1, num2);
                     break;
                 case "/":
-                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.divide(num1, num2);
+                    break;
             }
             System.out.println("Результат: " + result);
 
