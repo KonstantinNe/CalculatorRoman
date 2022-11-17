@@ -14,87 +14,95 @@ public class Main {
         String operation = null;
         String input = null;
 
+        do {
 
-        do{
+            System.out.println("Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
 
-        System.out.println("Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
+            while (flag = true) {
 
-        while (flag = true) {
+                input = scanner.nextLine(); //сканируем строку
 
-            input = scanner.nextLine(); //сканируем строку
+                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+                try {
+                    input = Check.getProbel(input);
+                    flag = false;
+                } catch (ProbelException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                }
 
-            String[] mas = input.split(" ");  //  делим массив строку на части где пробел
-            String d = input;
-            try {
-                input = Check.getProbel(d);
+                num1 = (mas[0]);   //  первая строка
+                a = 0;
+                try {
+                    a = Check.getInt(num1);
+                    flag = false;
+                } catch (NegativeException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                } catch (SymbolException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                }
+
+                operation = mas[1];  //  вторая строка
+
+                num2 = (mas[2]);  //  третья строка
+                b = 0;
+                try {
+                    b = Check.getInt(num2);
+                    flag = false;
+                } catch (NegativeException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                } catch (SymbolException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                }
                 flag = false;
-            } catch (ProbelException e) {
+                break;
+            }
+            Calculator calc = null;
+            calc = Check.getCalc(calc, num1, num2);
+
+
+            double result = 0;
+            switch (operation) {
+                case "+":             //если плюс то будет поведение такое поведение
+                    //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    result = calc.plus(a, b);
+                    break;
+                case "-":
+                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "*":
+                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
+                    break;
+                case "/":
+                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
+            }
+            System.out.println("Результат: " + result);
+
+            System.out.println("Вы завершили работу? Да или Нет?");
+            while (flag = true) {
+            input = scanner.nextLine();
+            try {
+                input = Check.getExit(input);
+            } catch (ExitException e) {
+                System.out.println(e.getMessage());
                 flag = true;
                 continue;
             }
-
-            num1 = (mas[0]);   //  первая строка
-            a = 0;
-            try {
-                a = Check.getInt(num1);
                 flag = false;
-            } catch (NegativeException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
-            } catch (SymbolException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
+                break;
             }
 
-            operation = mas[1];  //  вторая строка
-
-            num2 = (mas[2]);  //  третья строка
-            b = 0;
-            try {
-                b = Check.getInt(num2);
-                flag = false;
-            } catch (NegativeException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
-            } catch (SymbolException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
-            }
-            flag = false;
-            break;
-        }
-        Calculator calc = null;
-        calc = Check.getCalc(calc, num1, num2);
-
-
-        double result = 0;
-        switch (operation) {
-            case "+":             //если плюс то будет поведение такое поведение
-                //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                result = calc.plus(a, b);
-                break;
-            case "-":
-                result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            case "*":
-                result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                break;
-            case "/":
-                result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-        }
-        System.out.println("Результат: " + result);
-        System.out.println("Вы завершили работу? Да или Нет?");
-        input = scanner.nextLine();
-
-            if (input.equals("Да"));
-            flag = false;
-
-        }while (input.equals("Нет"));
-                System.out.println("До свидание!");
+        }while (input.equals("Нет")) ;
+        System.out.println("До свидание!");
     }
 }
 
