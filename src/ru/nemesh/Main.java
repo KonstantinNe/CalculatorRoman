@@ -47,9 +47,17 @@ public class Main {
                 }
 
                 operation = mas[1];  //  вторая строка
+                try {
+                    operation = Check.getOperation(operation);
+                    flag = false;
+                } catch (OperationException e) {
+                    System.out.println(e.getMessage());
+                    flag = true;
+                    continue;
+                }
 
                 num2 = (mas[2]);  //  третья строка
-            //    b = 0;
+                //    b = 0;
                 try {
                     b = (Check.getInt(num2));
                     flag = false;
@@ -69,45 +77,54 @@ public class Main {
             calc = Check.getCalc(calc, num1, num2);
 
 
-            double result = 0;
+              String result = null;
+//            Calculator Arab = null;
+//            Calculator Rom = null;
             switch (operation) {
                 case "+":
-                     result = calc.plus(num1, num2);
-                    Calculator Rom = null;
-                    if (calc == Rom){
-                        String c = String.valueOf(result);
-                     c = (Convert.convertToRom((int) result));}
-                    break;
-                case "-":
-                    result = calc.minus(num1, num2);
-                    break;
-                case "*":
-                    result = calc.multiply(num1, num2);
-                    break;
-                case "/":
-                    result = calc.divide(num1, num2);
-                    break;
-            }
-            System.out.println("Результат: " + result);
+                    result = String.valueOf(calc.plus(num1, num2));
+    //                  Check.getCalc(calc, num1, num2);
+//                    Calculator Arab = new Arab();
+//                    if (calc == Arab)
+//                      result = String.valueOf(Convert.convertToInt(result));
+//                    Calculator Rom = new Rom();
+//                    if (calc == Rom)
+                    //                     Check.getResult(result,calc,Arab,Rom);
+                      result = String.valueOf(Convert.convertToResult(result));
 
-            System.out.println("Вы завершили работу? Да или Нет?");
-            while (flag = true) {
-            input = scanner.nextLine();
-            try {
-                input = Check.getExit(input);
-            } catch (ExitException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
-            }
-                flag = false;
-                break;
-            }
+                        break;
+                        case "-":
+                            result = String.valueOf(calc.minus(num1, num2));
+                            break;
+                        case "*":
+                            result = String.valueOf(calc.multiply(num1, num2));
+                            break;
+                        case "/":
+                            result = String.valueOf(calc.divide(num1, num2));
+                            break;
+                    }
+                    System.out.println("Результат: " + result);
 
-        }while (input.equals("Нет")) ;
-        System.out.println("До свидание!");
+                    System.out.println("Вы завершили работу? Да или Нет?");
+                    while (flag = true) {
+                        input = scanner.nextLine();
+                        try {
+                            input = Check.getExit(input);
+                        } catch (ExitException e) {
+                            System.out.println(e.getMessage());
+                            flag = true;
+                            continue;
+                        }
+                        flag = false;
+                        break;
+                    }
+
+            }
+            while (input.equals("Нет")) ;
+            System.out.println("До свидание!");
+        }
     }
-}
+
 
     
 
