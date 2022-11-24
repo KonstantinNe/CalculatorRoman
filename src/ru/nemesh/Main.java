@@ -33,18 +33,6 @@ public class Main {
                 }
 
                 num1 = (mas[0]);   //  первая строка
-                try {
-                    a = Check.getInt(num1);
-                    flag = false;
-                } catch (NegativeException e) {
-                    System.out.println(e.getMessage());
-                    flag = true;
-                    continue;
-                } catch (SymbolException e) {
-                    System.out.println(e.getMessage());
-                    flag = true;
-                    continue;
-                }
 
                 operation = mas[1];  //  вторая строка
                 try {
@@ -59,6 +47,7 @@ public class Main {
                 num2 = (mas[2]);  //  третья строка
                 //    b = 0;
                 try {
+                    a = (Check.getInt(num1));
                     b = (Check.getInt(num2));
                     flag = false;
                 } catch (NegativeException e) {
@@ -78,19 +67,10 @@ public class Main {
 
 
               String result = null;
-//            Calculator Arab = null;
-//            Calculator Rom = null;
             switch (operation) {
                 case "+":
                     result = String.valueOf(calc.plus(num1, num2));
-    //                  Check.getCalc(calc, num1, num2);
-//                    Calculator Arab = new Arab();
-//                    if (calc == Arab)
-//                      result = String.valueOf(Convert.convertToInt(result));
-//                    Calculator Rom = new Rom();
-//                    if (calc == Rom)
-                    //                     Check.getResult(result,calc,Arab,Rom);
-                      result = String.valueOf(Convert.convertToResult(result));
+                    Check.getResult(result,num1,num2);
 
                         break;
                         case "-":

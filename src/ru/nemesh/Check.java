@@ -92,8 +92,17 @@ public class Check {
         else
             throw new OperationException("Введите оператор (пример +-/*)");
     }
+
+    public static String getResult(String result, String  num1, String  num2) {
+        try {
+            Double.parseDouble(num1);
+            Double.parseDouble(num2);
+            return result;
+        } catch (NumberFormatException e) {
+            return Convert.convertToResult(result);
+        }
+    }
 }
-//    public static String getResult(String result, Calculator calc, Calculator Rom, Calculator Arab) {
 //
 ////        if (calc == Rom)
 //        result = Convert.convertToRom(result);
