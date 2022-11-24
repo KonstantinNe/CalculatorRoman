@@ -2,22 +2,26 @@ package ru.nemesh;
 
 public class Rom implements Calculator{
     @Override
-    public char plus(int a, int b) {
-      return (char) (Convert.convertToArab(String.valueOf(a)) + Convert.convertToArab(String.valueOf(b)));
+    public int plus(String a, String b) {
+        int c = (Convert.convertToRom(a) + Convert.convertToRom(b));
+      return c;
     }
 
     @Override
-    public int minus(int a, int b) {
-        return (Convert.convertToArab(String.valueOf(a))) - Convert.convertToArab(String.valueOf(b));
+    public int minus(String a, String b) {
+        int c = (Convert.convertToRom(a) - Convert.convertToRom(b));
+        return c;
     }
 
     @Override
-    public int multiply(int a, int b) {
-        return (Convert.convertToArab(String.valueOf(a)) * Convert.convertToArab(String.valueOf(b)));
+    public int multiply(String a, String b) {
+        int c = (Convert.convertToRom(a) * Convert.convertToRom(b));
+        return c;
     }
 
     @Override
-    public int divide(int a, int b) {
-        return (Convert.convertToArab(String.valueOf(a)) / Convert.convertToArab(String.valueOf(b)));
+    public int divide(String a, String b) {
+        int c = (Convert.convertToRom(a) / Convert.convertToRom(b));
+        return c;
     }
 }

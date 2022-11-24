@@ -33,26 +33,22 @@ public class Main {
                 }
 
                 num1 = (mas[0]);   //  первая строка
-                a = 0;
+
+                operation = mas[1];  //  вторая строка
                 try {
-                    a = Check.getInt(num1);
+                    operation = Check.getOperation(operation);
                     flag = false;
-                } catch (NegativeException e) {
-                    System.out.println(e.getMessage());
-                    flag = true;
-                    continue;
-                } catch (SymbolException e) {
+                } catch (OperationException e) {
                     System.out.println(e.getMessage());
                     flag = true;
                     continue;
                 }
 
-                operation = mas[1];  //  вторая строка
-
                 num2 = (mas[2]);  //  третья строка
-                b = 0;
+                //    b = 0;
                 try {
-                    b = Check.getInt(num2);
+                    a = (Check.getInt(num1));
+                    b = (Check.getInt(num2));
                     flag = false;
                 } catch (NegativeException e) {
                     System.out.println(e.getMessage());
@@ -70,41 +66,45 @@ public class Main {
             calc = Check.getCalc(calc, num1, num2);
 
 
-            double result = 0;
+              String result = null;
             switch (operation) {
-                case "+":             //если плюс то будет поведение такое поведение
-                    //                                          result = calc.plus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    result = calc.plus(a, b);
-                    break;
-                case "-":
-                    result = calc.minus(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "*":
-                    result = calc.multiply(Integer.parseInt(num1), Integer.parseInt(num2));
-                    break;
-                case "/":
-                    result = calc.divide(Integer.parseInt(num1), Integer.parseInt(num2));
-            }
-            System.out.println("Результат: " + result);
+                case "+":
+                    result = String.valueOf(calc.plus(num1, num2));
+                    Check.getResult(result,num1,num2);
 
-            System.out.println("Вы завершили работу? Да или Нет?");
-            while (flag = true) {
-            input = scanner.nextLine();
-            try {
-                input = Check.getExit(input);
-            } catch (ExitException e) {
-                System.out.println(e.getMessage());
-                flag = true;
-                continue;
-            }
-                flag = false;
-                break;
-            }
+                        break;
+                        case "-":
+                            result = String.valueOf(calc.minus(num1, num2));
+                            break;
+                        case "*":
+                            result = String.valueOf(calc.multiply(num1, num2));
+                            break;
+                        case "/":
+                            result = String.valueOf(calc.divide(num1, num2));
+                            break;
+                    }
+                    System.out.println("Результат: " + result);
 
-        }while (input.equals("Нет")) ;
-        System.out.println("До свидание!");
+                    System.out.println("Вы завершили работу? Да или Нет?");
+                    while (flag = true) {
+                        input = scanner.nextLine();
+                        try {
+                            input = Check.getExit(input);
+                        } catch (ExitException e) {
+                            System.out.println(e.getMessage());
+                            flag = true;
+                            continue;
+                        }
+                        flag = false;
+                        break;
+                    }
+
+            }
+            while (input.equals("Нет")) ;
+            System.out.println("До свидание!");
+        }
     }
-}
+
 
     
 

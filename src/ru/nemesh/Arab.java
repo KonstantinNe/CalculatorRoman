@@ -3,21 +3,21 @@ package ru.nemesh;
 public class Arab implements Calculator{
 
     @Override
-    public char plus(int a, int b) { return ((char)(a + b)); }   //поведение с интерфейсом
+    public int plus(String a, String b) { return (Convert.convertToInt(a) + Convert.convertToInt(b)); }   //поведение с интерфейсом
 
     @Override
-    public int minus(int a, int b) {
-        return ((char) (a - b));
+    public int minus(String a, String b) {
+        return (Convert.convertToInt(a) - Convert.convertToInt(b));
     }
 
     @Override
-    public int multiply(int a, int b) {
-        return ((char) (a * b));
+    public int multiply(String a, String b) {
+        return (Convert.convertToInt(a) * Convert.convertToInt(b));
     }
 
     @Override
-    public int divide(int a, int b) {
-        return ((char) (a / b));
+    public int divide(String a, String b) {
+        return (Convert.convertToInt(a) / Convert.convertToInt(b));
     }
 
 }
