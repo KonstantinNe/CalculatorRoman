@@ -61,7 +61,7 @@ public class Convert {
         return Integer.parseInt(a);
     }
 
-    static String convertToResult(String a) {
+    static String convertToResult1(String a) {
         if (a.equals("1")) return "I";
         if (a.equals("2")) return "II";
         if (a.equals("3")) return "III";
@@ -72,8 +72,59 @@ public class Convert {
         if (a.equals("8")) return "VIII";
         if (a.equals("9")) return "IX";
         if (a.equals("10")) return "X";
-        return a;
+        return String.valueOf(a);
     }
+
+    public static String convertToResult(String a) {
+
+//        StringBuffer romNumber = new StringBuffer(a);
+//        int arabNumber = 0, i = 0; // Проверяем переданную строку на наличие символов
+//        if (romNumber.length() > 0) {
+//            while (true) {
+//                do {
+//                    if (Rom[i].length() <= romNumber.length()) { // Выделяем из строки подстроку и сравниваем со значением из массива Arab
+//                        if (Rom[i].equals(romNumber.substring(0,Rom[i].length()))) {  // После чего прибавляем число соответствующее индексу элемента римской цифры из массива Arab и удаляем из строки римскую цифру
+//                            arabNumber += Arab[i];
+//                            romNumber.delete(0, Rom[i].length());
+//                            if (romNumber.length() == 0)
+//                                return String.valueOf(arabNumber);
+//                        } else
+//                            break;
+//                    } else
+//                        break;
+//                } while (true && romNumber.length() != 0);
+//                i++;
+//            }
+//        }
+//        return String.valueOf(0);
+//    }
+
+        enum RomanNumeral {
+            I(1), IV(4), V(5), IX(9), X(10),
+            XL(40), L(50), XC(90), C(100),
+            CD(400), D(500), CM(900), M(1000);
+
+            RomanNumeral(int i) {
+            }
+
+  //  def to_roman(num):
+     //       # на старте в римском числе ничего нет
+  //          roman = ''
+  //  # пока наше число больше нуля
+    while a > 0:
+    //        # перебираем все пары из словаря
+        for i, r in all_roman:
+     //       # пока наше число больше или равно числу из словаря
+            while num >= i:
+    //        # добавляем соответствующую букву в римское число
+    roman += r
+     //           # вычитаем словарное число из нашего числа
+    num -= i
+  //  # как все циклы закончились — возвращаем римское число
+    return a;
+
+  //  print("Число 2022 в римской системе = " + to_roman(2022))
+    // https://thecode.media/sobes-roman/?ysclid=layeqr2up9154996180
 }
 
 
