@@ -1,5 +1,9 @@
 package ru.nemesh;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.awt.Dimension;
+
 public class Convert {
     static String[] Rom = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
     static int[] Arab = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
@@ -75,56 +79,39 @@ public class Convert {
         return String.valueOf(a);
     }
 
-    public static String convertToResult(String a) {
+ //   public static String convertToResult(String a) {
 
-//        StringBuffer romNumber = new StringBuffer(a);
-//        int arabNumber = 0, i = 0; // Проверяем переданную строку на наличие символов
-//        if (romNumber.length() > 0) {
-//            while (true) {
-//                do {
-//                    if (Rom[i].length() <= romNumber.length()) { // Выделяем из строки подстроку и сравниваем со значением из массива Arab
-//                        if (Rom[i].equals(romNumber.substring(0,Rom[i].length()))) {  // После чего прибавляем число соответствующее индексу элемента римской цифры из массива Arab и удаляем из строки римскую цифру
-//                            arabNumber += Arab[i];
-//                            romNumber.delete(0, Rom[i].length());
-//                            if (romNumber.length() == 0)
-//                                return String.valueOf(arabNumber);
-//                        } else
-//                            break;
-//                    } else
-//                        break;
-//                } while (true && romNumber.length() != 0);
-//                i++;
-//            }
-//        }
-//        return String.valueOf(0);
-//    }
 
-        enum RomanNumeral {
-            I(1), IV(4), V(5), IX(9), X(10),
-            XL(40), L(50), XC(90), C(100),
-            CD(400), D(500), CM(900), M(1000);
 
-            RomanNumeral(int i) {
+    public static int romanToArabic(String input) throws IllegalArgumentException {
+                String romanNumeral = input.toUpperCase();
+                int result = 0;
+
+                List romanNumerals = RomanNumeral.getReverseSortedValues();
+
+                int i = 0;
+
+      //          while ((romanNumeral.length() > 0) && (i < romanNumerals.size()) {
+      //              
+                    RomanNumeral symbol = romanNumerals.get(i);
+                    if (romanNumeral.startsWith(symbol.name())) {
+                        result += symbol.getValue();
+                        romanNumeral = romanNumeral.substring(symbol.name().length());
+                    } else {
+                        i++;
+                    }
+       //         }
+
+                if (romanNumeral.length() > 0) {
+                    throw new IllegalArgumentException(input + " не может быть преобразован в римскую цифру");
+                }
+
+                return result;
             }
 
-  //  def to_roman(num):
-     //       # на старте в римском числе ничего нет
-  //          roman = ''
-  //  # пока наше число больше нуля
-    while a > 0:
-    //        # перебираем все пары из словаря
-        for i, r in all_roman:
-     //       # пока наше число больше или равно числу из словаря
-            while num >= i:
-    //        # добавляем соответствующую букву в римское число
-    roman += r
-     //           # вычитаем словарное число из нашего числа
-    num -= i
-  //  # как все циклы закончились — возвращаем римское число
-    return a;
 
-  //  print("Число 2022 в римской системе = " + to_roman(2022))
-    // https://thecode.media/sobes-roman/?ysclid=layeqr2up9154996180
-}
+            // https://thecode.media/sobes-roman/?ysclid=layeqr2up9154996180
+        }
+
 
 
