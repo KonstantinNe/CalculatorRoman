@@ -101,7 +101,7 @@ public class Check {
                 if(num1.equals(true));
                 return result;
             } catch (NumberFormatException e) {
-                result = Convert.convertToResult(result);
+                Convert.convertToResult(result);
                 return result;
             }
         }
