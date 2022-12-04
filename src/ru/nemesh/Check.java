@@ -93,16 +93,20 @@ public class Check {
             throw new OperationException("Введите оператор (пример +-/*)");
     }
 
-    public static String getResult(String result, String  num1, String  num2) {
-        try {
-            Double.parseDouble(num1);
-            Double.parseDouble(num2);
-            return result;
-        } catch (NumberFormatException e) {
-            return Convert.convertToResult(result);
+    public static String getResult(String result, String num1, String num2) {
+
+            try {
+                Double.parseDouble(num1);
+                Double.parseDouble(num2);
+                if(num1.equals(true));
+                return result;
+            } catch (NumberFormatException e) {
+                Convert.convertToResult(result);
+                return result;
+            }
         }
     }
-}
+
 //
 ////        if (calc == Rom)
 //        result = Convert.convertToRom(result);
