@@ -21,6 +21,8 @@ public class Check {
     }
 
     private static int checkRom(String a) throws Exception {
+        String[] mas = a.split("");
+        String c = mas[0];
         if (a.equals("I")) return 1;
         if (a.equals("II")) return 2;
         if (a.equals("III")) return 3;
@@ -31,6 +33,12 @@ public class Check {
         if (a.equals("VIII")) return 8;
         if (a.equals("IX")) return 9;
         if (a.equals("X")) return 10;
+        if (c.equals("X")) return 20;
+        if (c.equals("L")) return 20;
+        if (a.equals("XC")) return 90;
+        if (c.equals("C")) return 100;
+        if (c.equals("D")) return 500;
+        if (a.equals("CM")) return 1000;
         throw new SymbolException("Ошибка! Вы ввели символ или букву, необходимо ввести арабские или римские цифры! Или ввели цифры без пробела");
 
     }
@@ -104,12 +112,11 @@ public class Check {
             return result;
         } catch (NumberFormatException e) {
             //         Convert.convertToResult(result);
-            return result;
+            return getUnits(result);
         }
     }
 
     static String getUnits(String a) {
-
         Scanner scanner = new Scanner(System.in);
         String units[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String tens[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
@@ -124,6 +131,20 @@ public class Check {
         String result2 = getUn(e);
         String result = result1+result2;
         return result;
+    }
+
+    static String gethundreds(String a) {
+        String b = null;
+        if (a.equals("1")) return b = "C";
+        if (a.equals("2")) return b = "CC";
+        if (a.equals("3")) return b = "CCC";
+        if (a.equals("4")) return b = "CD";
+        if (a.equals("5")) return b = "D";
+        if (a.equals("6")) return b = "DC";
+        if (a.equals("7")) return b = "DCC";
+        if (a.equals("8")) return b = "DCCC";
+        if (a.equals("9")) return b = "CM";
+        return a;
     }
 
     static String getTen(String a) {
@@ -152,6 +173,7 @@ public class Check {
         if (a.equals("8")) return b = "VIII";
         if (a.equals("9")) return b = "IX";
         if (a.equals("10")) return b = "X";
+        if (a.equals("0")) return b = "";
         return a;
     }
 }
