@@ -1,13 +1,10 @@
 package ru.nemesh;
 
-import java.awt.*;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.stream.Collectors;
+import java.util.Scanner;
 
 public enum RomanNumeral1 {
 
-    I("I",1), IV("IV",4), V("V",5), IX("IX",9), X("IX",10), XL("XL",40), L("L",50), XC("XC",90), C("C",100), CD("CD",400), D("D",500), CM("CM",900), M("M",1000);
+    I("I", 1), IV("IV", 4), V("V", 5), IX("IX", 9), X("IX", 10), XL("XL", 40), L("L", 50), XC("XC", 90), C("C", 100), CD("CD", 400), D("D", 500), CM("CM", 900), M("M", 1000);
 
     private int value;
     private String key;
@@ -15,18 +12,31 @@ public enum RomanNumeral1 {
     RomanNumeral1(String key, int value) {
         this.value = value;
     }
-    public int getValue() {
-        return value;}
-    public String getKey() {
-        return key;
-        int toInt(String key) {
-            for (RomanNumeral1 i: this.values())
-                if (i.getKey.equals(key))
-                    return i.getValue();
 
-            return "";
+    public String getValue(String a) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            if (a.equals(key)) return a;
+        } catch (NumberFormatException e) {
+            String input = scanner.nextLine();
+
         }
+
+        return a;
     }
+}
+//    public int getValue(){
+//        return value;}
+//    public String getKey(){
+//        return key;}
+//    int toInt(key) {
+//            for (RomanNumeral1 i: this.values())
+//                if (i.getKey.equals(key))
+//                    return i.getValue();
+//
+//            return "";
+//        }
+//    }
 
 
 
@@ -51,7 +61,3 @@ public enum RomanNumeral1 {
         // 5. добавляем его I к запомниному V и получается VI
         //
 
-
-        return 0;
-    }
-}

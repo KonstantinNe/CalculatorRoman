@@ -71,7 +71,7 @@ public class Main {
                 case "+":
                     result = String.valueOf(calc.plus(num1, num2));
                   //  result = Check.getResult(result,num1,num2);
-                    result = Check.getResult(result,num1,num2);
+                    result = Check.getUnits(result);
                         break;
                         case "-":
                             result = String.valueOf(calc.minus(num1, num2));
