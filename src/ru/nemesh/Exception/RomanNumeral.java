@@ -1,4 +1,4 @@
-package ru.nemesh;
+package ru.nemesh.Exception;
 
 import java.awt.*;
 import java.util.Arrays;

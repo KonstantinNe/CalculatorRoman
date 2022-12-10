@@ -1,5 +1,6 @@
 package ru.nemesh;
 
+import ru.nemesh.Exception.*;
 import java.util.Scanner;
 
 public class Check {
@@ -45,9 +46,9 @@ public class Check {
 
     public static boolean Numeric(String a) {
         try {
-            Double.parseDouble(a);    //если число то возвращаем истина/ реализация не правильная, почитать
+            Double.parseDouble(a);
             return true;
-        } catch (NumberFormatException e) {  //если не число то возвращаем ложь
+        } catch (NumberFormatException e) {
             return false;
         }
     }
@@ -111,18 +112,15 @@ public class Check {
             if (num1.equals(true)) ;
             return result;
         } catch (NumberFormatException e) {
-            //         Convert.convertToResult(result);
             return getUnits(result);
         }
     }
 
     static String getUnits(String a) {
-        Scanner scanner = new Scanner(System.in);
         String units[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String tens[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String hundreds[] = {"C"};
         String arab[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        //  String[] mas = unit.split(",");
 
             String[] mas = a.split("");
             String c = mas[0];
@@ -177,88 +175,3 @@ public class Check {
         return a;
     }
 }
-
- //       } while
-
-//        } catch (NumberFormatException e) {
-//            for (String unit : units){
-//                String result = "X" + unit;
-//                if(a.equals(result))
-//                    return result;}
-//    }
-//        if(a.equals("20"))return "XX";
-//            for (String ten : tens) {
-//
-//        }
-//
-//        return String.valueOf(0);
-//    }
-//}
-
-//
-//        static int s_units(String a) {
-//            int x = Integer.parseInt(a);
-//            int units = x % 10;
-//            int tens = (x % 100) / 10;
-//            int hundreds = (x % 1000) / 100;
-//
-//            String s_units = "";
-//            switch (units) {
-//                case 1:
-//                    s_units = "I";
-//                case 2:
-//                    s_units = "II";
-//                case 3:
-//                    s_units = "III";
-//                case 4:
-//                    s_units = "IV";
-//                case 5:
-//                    s_units = "V";
-//                case 6:
-//                    s_units = "VI";
-//                case 7:
-//                    s_units = "VII";
-//                case 8:
-//                    s_units = "VIII";
-//                case 9:
-//                    s_units = "IX";
-//
-//                    String s_tens = "";
-//                    switch (tens) {
-//                        case 1:
-//                            s_tens = "X";
-//                        case 2:
-//                            s_tens = "XX";
-//                        case 3:
-//                            s_tens = "XXX";
-//                        case 4:
-//                            s_tens = "XL";
-//                        case 5:
-//                            s_tens = "L";
-//                        case 6:
-//                            s_tens = "LX";
-//                        case 7:
-//                            s_tens = "LXX";
-//                        case 8:
-//                            s_tens = "LXXX";
-//                        case 9:
-//                            s_tens = "XC";
-//
-//                            String s_hundreds = "";
-//                            switch (hundreds) {
-//                                case 1:
-//                                    s_hundreds = "C";
-//                            }
-//                            return s_hundreds;
-//                    }
-//            }
-
-//
-////        if (calc == Rom)
-//        result = Convert.convertToRom(result);
-////        if (calc == Arab)
-////            return result;
-//        return result;
-//    }
-//    }
-
