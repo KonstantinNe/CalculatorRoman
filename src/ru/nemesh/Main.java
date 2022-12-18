@@ -1,7 +1,6 @@
 package ru.nemesh;
 
 import ru.nemesh.Exception.*;
-
 import java.util.Scanner;
 
 public class Main {
@@ -21,44 +20,44 @@ public class Main {
             while (flag == true) {
 
                 input = scanner.nextLine(); //сканируем строку
-
-                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
                 try {
                     input = Check.getProbel(input);
-              //      flag = false;
+
                 } catch (ProbelException e) {
                     System.out.println(e.getMessage());
-               //     flag = true;
                     continue;
                 }
 
-                num1 = (mas[0]);   //  первая строка
+                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+                try {
+                    input = Check.getMas(mas[0],mas[1],mas[2]);
+                } catch (NullnumException e) {
+                    System.out.println(e.getMessage());
+                    continue;
+                }
+
+                num1 = mas[0];   //  первая строка
+
 
                 operation = mas[1];  //  вторая строка
                 try {
                     operation = Check.getOperation(operation);
-         //           flag = false;
                 } catch (OperationException e) {
                     System.out.println(e.getMessage());
-        //            flag = true;
                     continue;
                 }
 
-                num2 = (mas[2]);
+                num2 = mas[2];
                 try {
-                    int a = (Check.getInt(num1));
-                    int b = (Check.getInt(num2));
-             //       flag = false;
+                    Check.getInt(num1);
+                    Check.getInt(num2);
                 } catch (NegativeException e) {
                     System.out.println(e.getMessage());
-              //      flag = true;
                     continue;
                 } catch (SymbolException e) {
                     System.out.println(e.getMessage());
-              //      flag = true;
                     continue;
                 }
-         //       flag = false;
                 break;
             }
             Calculator calc = null;
@@ -73,12 +72,15 @@ public class Main {
                         break;
                         case "-":
                             result = String.valueOf(calc.minus(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                         case "*":
                             result = String.valueOf(calc.multiply(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                         case "/":
                             result = String.valueOf(calc.divide(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                     }
                     System.out.println("Результат: " + result);
@@ -90,10 +92,8 @@ public class Main {
                             input = Check.getExit(input);
                         } catch (ExitException e) {
                             System.out.println(e.getMessage());
-                    //        flag = true;
                             continue;
                         }
-                    //    flag = false;
                         break;
                     }
 

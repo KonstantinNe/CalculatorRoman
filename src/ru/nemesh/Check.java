@@ -1,7 +1,6 @@
 package ru.nemesh;
 
 import ru.nemesh.Exception.*;
-import java.util.Scanner;
 
 public class Check {
 
@@ -75,10 +74,23 @@ public class Check {
     }
 
     public static String getProbel(String input) throws ProbelException {
-        if (input.contains(" "))
+        boolean space = containsWhiteSpace(input);
+        if (space == true)
             return input;
         else
             throw new ProbelException("Ввод чисел и оператора должен быть через пробел (пример 2 + 3)");
+    }
+
+    public static boolean containsWhiteSpace(String input) {
+        boolean space = false;
+        if (input != null) {
+            for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) == ' ') {
+                    space = true;
+                }
+            }
+        }
+        return space;
     }
 
     public static String getExit(String input) throws ExitException {
@@ -92,17 +104,18 @@ public class Check {
     }
 
     public static String getOperation(String operation) throws OperationException {
-        if (operation.contains("+"))
+            if (operation.equals("+"))
             return operation;
-        if (operation.contains("-"))
+            if (operation.equals("-"))
             return operation;
-        if (operation.contains("/"))
+            if (operation.equals("/"))
             return operation;
-        if (operation.contains("*"))
+            if (operation.equals("*"))
             return operation;
-        else
-            throw new OperationException("Введите оператор (пример +-/*)");
+            else
+                throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
     }
+
 
     public static String getResult(String result, String num1, String num2) {
 
@@ -131,47 +144,42 @@ public class Check {
         return result;
     }
 
-    static String gethundreds(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "C";
-        if (a.equals("2")) return b = "CC";
-        if (a.equals("3")) return b = "CCC";
-        if (a.equals("4")) return b = "CD";
-        if (a.equals("5")) return b = "D";
-        if (a.equals("6")) return b = "DC";
-        if (a.equals("7")) return b = "DCC";
-        if (a.equals("8")) return b = "DCCC";
-        if (a.equals("9")) return b = "CM";
-        return a;
-    }
-
     static String getTen(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "X";
-        if (a.equals("2")) return b = "XX";
-        if (a.equals("3")) return b = "XXX";
-        if (a.equals("4")) return b = "XL";
-        if (a.equals("5")) return b = "L";
-        if (a.equals("6")) return b = "LX";
-        if (a.equals("7")) return b = "LXX";
-        if (a.equals("8")) return b = "LXXX";
-        if (a.equals("9")) return b = "XC";
+        if (a.equals("1")) return "X";
+        if (a.equals("2")) return "XX";
+        if (a.equals("3")) return "XXX";
+        if (a.equals("4")) return "XL";
+        if (a.equals("5")) return "L";
+        if (a.equals("6")) return "LX";
+        if (a.equals("7")) return "LXX";
+        if (a.equals("8")) return "LXXX";
+        if (a.equals("9")) return "XC";
         return a;
     }
 
     static String getUn(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "I";
-        if (a.equals("2")) return b = "II";
-        if (a.equals("3")) return b = "III";
-        if (a.equals("4")) return b = "IV";
-        if (a.equals("5")) return b = "V";
-        if (a.equals("6")) return b = "VI";
-        if (a.equals("7")) return b = "VII";
-        if (a.equals("8")) return b = "VIII";
-        if (a.equals("9")) return b = "IX";
-        if (a.equals("10")) return b = "X";
-        if (a.equals("0")) return b = "";
+        if (a.equals("1")) return "I";
+        if (a.equals("2")) return "II";
+        if (a.equals("3")) return "III";
+        if (a.equals("4")) return "IV";
+        if (a.equals("5")) return "V";
+        if (a.equals("6")) return "VI";
+        if (a.equals("7")) return "VII";
+        if (a.equals("8")) return "VIII";
+        if (a.equals("9")) return "IX";
+        if (a.equals("10")) return "X";
+        if (a.equals("0")) return "";
         return a;
     }
+
+    public static String getMas(String a, String b, String c) throws NullnumException {
+            String result = null;
+            if (a.equals(null))
+            if (b.equals(null))
+                return result;
+            else
+                throw new NullnumException("Введите второе число!");
+        return result;
+    }
+
 }
