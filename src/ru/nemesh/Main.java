@@ -1,14 +1,13 @@
 package ru.nemesh;
 
+import ru.nemesh.Exception.*;
 import java.util.Scanner;
 
 public class Main {
 
-    public static <getMessage> void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        boolean flag;
-        int a = 0;
-        int b = 0;
+        boolean flag = true;
         String num1 = null;
         String num2 = null;
         String operation = null;
@@ -18,48 +17,47 @@ public class Main {
 
             System.out.println("Введите положительные числа через пробел и нужный оператор +/*- (пример 2 + 3):");
 
-            while (flag = true) {
+            while (flag == true) {
 
                 input = scanner.nextLine(); //сканируем строку
-
-                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
                 try {
                     input = Check.getProbel(input);
-                    flag = false;
+
                 } catch (ProbelException e) {
                     System.out.println(e.getMessage());
-                    flag = true;
                     continue;
                 }
 
-                num1 = (mas[0]);   //  первая строка
+                String[] mas = input.split(" ");  //  делим массив строку на части где пробел
+                try {
+                    input = Check.getMas(mas[0],mas[1],mas[2]);
+                } catch (NullnumException e) {
+                    System.out.println(e.getMessage());
+                    continue;
+                }
+
+                num1 = mas[0];   //  первая строка
+
 
                 operation = mas[1];  //  вторая строка
                 try {
                     operation = Check.getOperation(operation);
-                    flag = false;
                 } catch (OperationException e) {
                     System.out.println(e.getMessage());
-                    flag = true;
                     continue;
                 }
 
-                num2 = (mas[2]);  //  третья строка
-                //    b = 0;
+                num2 = mas[2];
                 try {
-                    a = (Check.getInt(num1));
-                    b = (Check.getInt(num2));
-                    flag = false;
+                    Check.getInt(num1);
+                    Check.getInt(num2);
                 } catch (NegativeException e) {
                     System.out.println(e.getMessage());
-                    flag = true;
                     continue;
                 } catch (SymbolException e) {
                     System.out.println(e.getMessage());
-                    flag = true;
                     continue;
                 }
-                flag = false;
                 break;
             }
             Calculator calc = null;
@@ -71,31 +69,31 @@ public class Main {
                 case "+":
                     result = String.valueOf(calc.plus(num1, num2));
                     result = Check.getResult(result,num1,num2);
-             //       result = Check.getUnits(result);
                         break;
                         case "-":
                             result = String.valueOf(calc.minus(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                         case "*":
                             result = String.valueOf(calc.multiply(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                         case "/":
                             result = String.valueOf(calc.divide(num1, num2));
+                            result = Check.getResult(result,num1,num2);
                             break;
                     }
                     System.out.println("Результат: " + result);
 
                     System.out.println("Вы завершили работу? Да или Нет?");
-                    while (flag = true) {
+                    while (flag == true) {
                         input = scanner.nextLine();
                         try {
                             input = Check.getExit(input);
                         } catch (ExitException e) {
                             System.out.println(e.getMessage());
-                            flag = true;
                             continue;
                         }
-                        flag = false;
                         break;
                     }
 

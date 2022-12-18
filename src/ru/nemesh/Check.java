@@ -1,6 +1,6 @@
 package ru.nemesh;
 
-import java.util.Scanner;
+import ru.nemesh.Exception.*;
 
 public class Check {
 
@@ -45,9 +45,9 @@ public class Check {
 
     public static boolean Numeric(String a) {
         try {
-            Double.parseDouble(a);    //если число то возвращаем истина/ реализация не правильная, почитать
+            Double.parseDouble(a);
             return true;
-        } catch (NumberFormatException e) {  //если не число то возвращаем ложь
+        } catch (NumberFormatException e) {
             return false;
         }
     }
@@ -74,10 +74,23 @@ public class Check {
     }
 
     public static String getProbel(String input) throws ProbelException {
-        if (input.contains(" "))
+        boolean space = containsWhiteSpace(input);
+        if (space == true)
             return input;
         else
             throw new ProbelException("Ввод чисел и оператора должен быть через пробел (пример 2 + 3)");
+    }
+
+    public static boolean containsWhiteSpace(String input) {
+        boolean space = false;
+        if (input != null) {
+            for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) == ' ') {
+                    space = true;
+                }
+            }
+        }
+        return space;
     }
 
     public static String getExit(String input) throws ExitException {
@@ -91,17 +104,18 @@ public class Check {
     }
 
     public static String getOperation(String operation) throws OperationException {
-        if (operation.contains("+"))
+            if (operation.equals("+"))
             return operation;
-        if (operation.contains("-"))
+            if (operation.equals("-"))
             return operation;
-        if (operation.contains("/"))
+            if (operation.equals("/"))
             return operation;
-        if (operation.contains("*"))
+            if (operation.equals("*"))
             return operation;
-        else
-            throw new OperationException("Введите оператор (пример +-/*)");
+            else
+                throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
     }
+
 
     public static String getResult(String result, String num1, String num2) {
 
@@ -111,18 +125,15 @@ public class Check {
             if (num1.equals(true)) ;
             return result;
         } catch (NumberFormatException e) {
-            //         Convert.convertToResult(result);
             return getUnits(result);
         }
     }
 
     static String getUnits(String a) {
-        Scanner scanner = new Scanner(System.in);
         String units[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String tens[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String hundreds[] = {"C"};
         String arab[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-        //  String[] mas = unit.split(",");
 
             String[] mas = a.split("");
             String c = mas[0];
@@ -133,132 +144,42 @@ public class Check {
         return result;
     }
 
-    static String gethundreds(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "C";
-        if (a.equals("2")) return b = "CC";
-        if (a.equals("3")) return b = "CCC";
-        if (a.equals("4")) return b = "CD";
-        if (a.equals("5")) return b = "D";
-        if (a.equals("6")) return b = "DC";
-        if (a.equals("7")) return b = "DCC";
-        if (a.equals("8")) return b = "DCCC";
-        if (a.equals("9")) return b = "CM";
-        return a;
-    }
-
     static String getTen(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "X";
-        if (a.equals("2")) return b = "XX";
-        if (a.equals("3")) return b = "XXX";
-        if (a.equals("4")) return b = "XL";
-        if (a.equals("5")) return b = "L";
-        if (a.equals("6")) return b = "LX";
-        if (a.equals("7")) return b = "LXX";
-        if (a.equals("8")) return b = "LXXX";
-        if (a.equals("9")) return b = "XC";
+        if (a.equals("1")) return "X";
+        if (a.equals("2")) return "XX";
+        if (a.equals("3")) return "XXX";
+        if (a.equals("4")) return "XL";
+        if (a.equals("5")) return "L";
+        if (a.equals("6")) return "LX";
+        if (a.equals("7")) return "LXX";
+        if (a.equals("8")) return "LXXX";
+        if (a.equals("9")) return "XC";
         return a;
     }
 
     static String getUn(String a) {
-        String b = null;
-        if (a.equals("1")) return b = "I";
-        if (a.equals("2")) return b = "II";
-        if (a.equals("3")) return b = "III";
-        if (a.equals("4")) return b = "IV";
-        if (a.equals("5")) return b = "V";
-        if (a.equals("6")) return b = "VI";
-        if (a.equals("7")) return b = "VII";
-        if (a.equals("8")) return b = "VIII";
-        if (a.equals("9")) return b = "IX";
-        if (a.equals("10")) return b = "X";
-        if (a.equals("0")) return b = "";
+        if (a.equals("1")) return "I";
+        if (a.equals("2")) return "II";
+        if (a.equals("3")) return "III";
+        if (a.equals("4")) return "IV";
+        if (a.equals("5")) return "V";
+        if (a.equals("6")) return "VI";
+        if (a.equals("7")) return "VII";
+        if (a.equals("8")) return "VIII";
+        if (a.equals("9")) return "IX";
+        if (a.equals("10")) return "X";
+        if (a.equals("0")) return "";
         return a;
     }
+
+    public static String getMas(String a, String b, String c) throws NullnumException {
+            String result = null;
+            if (a.equals(null))
+            if (b.equals(null))
+                return result;
+            else
+                throw new NullnumException("Введите второе число!");
+        return result;
+    }
+
 }
-
- //       } while
-
-//        } catch (NumberFormatException e) {
-//            for (String unit : units){
-//                String result = "X" + unit;
-//                if(a.equals(result))
-//                    return result;}
-//    }
-//        if(a.equals("20"))return "XX";
-//            for (String ten : tens) {
-//
-//        }
-//
-//        return String.valueOf(0);
-//    }
-//}
-
-//
-//        static int s_units(String a) {
-//            int x = Integer.parseInt(a);
-//            int units = x % 10;
-//            int tens = (x % 100) / 10;
-//            int hundreds = (x % 1000) / 100;
-//
-//            String s_units = "";
-//            switch (units) {
-//                case 1:
-//                    s_units = "I";
-//                case 2:
-//                    s_units = "II";
-//                case 3:
-//                    s_units = "III";
-//                case 4:
-//                    s_units = "IV";
-//                case 5:
-//                    s_units = "V";
-//                case 6:
-//                    s_units = "VI";
-//                case 7:
-//                    s_units = "VII";
-//                case 8:
-//                    s_units = "VIII";
-//                case 9:
-//                    s_units = "IX";
-//
-//                    String s_tens = "";
-//                    switch (tens) {
-//                        case 1:
-//                            s_tens = "X";
-//                        case 2:
-//                            s_tens = "XX";
-//                        case 3:
-//                            s_tens = "XXX";
-//                        case 4:
-//                            s_tens = "XL";
-//                        case 5:
-//                            s_tens = "L";
-//                        case 6:
-//                            s_tens = "LX";
-//                        case 7:
-//                            s_tens = "LXX";
-//                        case 8:
-//                            s_tens = "LXXX";
-//                        case 9:
-//                            s_tens = "XC";
-//
-//                            String s_hundreds = "";
-//                            switch (hundreds) {
-//                                case 1:
-//                                    s_hundreds = "C";
-//                            }
-//                            return s_hundreds;
-//                    }
-//            }
-
-//
-////        if (calc == Rom)
-//        result = Convert.convertToRom(result);
-////        if (calc == Arab)
-////            return result;
-//        return result;
-//    }
-//    }
-

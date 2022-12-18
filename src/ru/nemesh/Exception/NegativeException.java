@@ -1,4 +1,4 @@
-package ru.nemesh;
+package ru.nemesh.Exception;
 
 public class NegativeException extends Exception {
 
