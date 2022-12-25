@@ -129,20 +129,51 @@ public class Check {
         }
     }
 
-    static String getUnits(String a) {
+    static String getUnits(String a) {                //проверяем результат
         String units[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String tens[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String hundreds[] = {"C"};
         String arab[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
-            String[] mas = a.split("");
-            String c = mas[0];
-            String e = mas[1];
-        String result1 = getTen(c);
-        String result2 = getUn(e);
-        String result = result1+result2;
-        return result;
+        String[] mas = a.split("");
+        String result1 = null;
+        String result2 = null;
+        String result3 = null;
+        boolean resultNum = CheckMas(a);
+
+        if (resultNum == (true)) {
+            result2 = getUn(mas[0]);
+            return result2;
+        } else {
+            if (resultNum == (false)) ;
+            result1 = getTen(mas[0]);
+            result3 = getUn(mas[1]);
+            String result = result1 + result3;
+            return result;
+        }
+
+//            else if(a.equals(mas[0]))
+//                return result1 = getTen(mas[0]);
+//            else if (a.equals(mas[1]))
+//                result2 = getUn(mas[1]);
+//            String result = result1+result2;
+//            return result;
+        }
+     //   String result1 = getTen(c);
+      //  String result2 = getUn(e);
+//        String result = result1+result2;
+//        return result;
+
+    private static boolean CheckMas(String a) {
+        String[] mas = a.split("");
+        String value = mas[0];
+        if (a.equals(value)) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
 
     static String getTen(String a) {
         if (a.equals("1")) return "X";
@@ -172,7 +203,7 @@ public class Check {
         return a;
     }
 
-    public static String getMas(String a, String b, String c) throws NullnumException {
+    public static String getMas(String a, String b, String c) throws NullnumException {     //проверяем сколько чисел введено в строку
             String result = null;
             if (a.equals(null))
             if (b.equals(null))
