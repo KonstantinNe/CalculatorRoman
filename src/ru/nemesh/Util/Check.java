@@ -108,16 +108,15 @@ public class Check {
 
     public static String getOperation(String operation) throws OperationException {
         if (operation.equals("+"))
-        //    return operation;
+            return operation;
         if (operation.equals("-"))
-        //    return operation;
+            return operation;
         if (operation.equals("/"))
-        //    return operation;
+            return operation;
         if (operation.equals("*"))
             return operation;
         else
             throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
-        return operation;
     }
 
 
@@ -210,7 +209,6 @@ public class Check {
     private static boolean HowmachMas(String a) {
 
         String[] mas = a.split(" ");
-     //   String[] arrays = {mas[0], mas[1], mas[2]};
         int arrayLength = mas.length;
             for (int i = 0; i < a.length(); i++) {
                 if (arrayLength == 3) {
