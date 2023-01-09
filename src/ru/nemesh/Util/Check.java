@@ -1,6 +1,8 @@
-package ru.nemesh;
+package ru.nemesh.Util;
 
+import ru.nemesh.Interface.Calculator;
 import ru.nemesh.Exception.*;
+
 
 public class Check {
 
@@ -85,7 +87,8 @@ public class Check {
         boolean space = false;
         if (input != null) {
             for (int i = 0; i < input.length(); i++) {
-                if (input.charAt(i) == ' ') {
+                if (input.charAt(i) == ' '){
+          //      if (' ' == 2)
                     space = true;
                 }
             }
@@ -104,16 +107,17 @@ public class Check {
     }
 
     public static String getOperation(String operation) throws OperationException {
-            if (operation.equals("+"))
+        if (operation.equals("+"))
+        //    return operation;
+        if (operation.equals("-"))
+        //    return operation;
+        if (operation.equals("/"))
+        //    return operation;
+        if (operation.equals("*"))
             return operation;
-            if (operation.equals("-"))
-            return operation;
-            if (operation.equals("/"))
-            return operation;
-            if (operation.equals("*"))
-            return operation;
-            else
-                throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
+        else
+            throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
+        return operation;
     }
 
 
@@ -152,17 +156,7 @@ public class Check {
             return result;
         }
 
-//            else if(a.equals(mas[0]))
-//                return result1 = getTen(mas[0]);
-//            else if (a.equals(mas[1]))
-//                result2 = getUn(mas[1]);
-//            String result = result1+result2;
-//            return result;
-        }
-     //   String result1 = getTen(c);
-      //  String result2 = getUn(e);
-//        String result = result1+result2;
-//        return result;
+    }
 
     private static boolean CheckMas(String a) {
         String[] mas = a.split("");
@@ -203,14 +197,28 @@ public class Check {
         return a;
     }
 
-    public static String getMas(String a, String b, String c) throws NullnumException {     //проверяем сколько чисел введено в строку
-            String result = null;
-            if (a.equals(null))
-            if (b.equals(null))
-                return result;
-            else
-                throw new NullnumException("Введите второе число!");
-        return result;
+    public static String getMas(String a) throws NullnumException {     //проверяем сколько чисел введено в строку
+        boolean resultNum = HowmachMas(a);
+
+        if (resultNum == (true)) {
+            return a;
+        } else {
+            throw new NullnumException("Введите второе число!");
+        }
     }
 
+    private static boolean HowmachMas(String a) {
+
+        String[] mas = a.split(" ");
+     //   String[] arrays = {mas[0], mas[1], mas[2]};
+        int arrayLength = mas.length;
+            for (int i = 0; i < a.length(); i++) {
+                if (arrayLength == 3) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        return false;
+    }
 }

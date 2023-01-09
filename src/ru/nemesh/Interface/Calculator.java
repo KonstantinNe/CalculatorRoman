@@ -1,4 +1,4 @@
-package ru.nemesh;
+package ru.nemesh.Interface;
 
 public interface Calculator {
 

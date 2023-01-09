@@ -1,6 +1,8 @@
-package ru.nemesh;
+package ru.nemesh.Util;
 
-public class Rom implements Calculator{
+import ru.nemesh.Interface.Calculator;
+
+public class Rom implements Calculator {
     @Override
     public int plus(String a, String b) {
         int c = (Convert.convertToRom(a) + Convert.convertToRom(b));

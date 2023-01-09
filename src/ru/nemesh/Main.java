@@ -1,6 +1,9 @@
 package ru.nemesh;
 
 import ru.nemesh.Exception.*;
+import ru.nemesh.Interface.Calculator;
+import ru.nemesh.Util.Check;
+
 import java.util.Scanner;
 
 public class Main {
@@ -30,7 +33,7 @@ public class Main {
 
                 String[] mas = input.split(" ");  //  делим массив строку на части где пробел
                 try {
-                    input = Check.getMas(mas[0],mas[1],mas[2]);
+                    input = Check.getMas(input);
                 } catch (NullnumException e) {
                     System.out.println(e.getMessage());
                     continue;
