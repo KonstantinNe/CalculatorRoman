@@ -108,7 +108,7 @@ public class Check {
 
     public static String getOperation(String operation) throws OperationException {
         if (operation.equals("+"))
-            return operation;
+                return operation;
         if (operation.equals("-"))
             return operation;
         if (operation.equals("/"))
