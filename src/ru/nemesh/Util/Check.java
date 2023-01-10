@@ -107,18 +107,16 @@ public class Check {
     }
 
     public static String getOperation(String operation) throws OperationException {
-        if (operation.equals("+"))
-                return operation;
-        if (operation.equals("-"))
+        if (operation.equals("+")) {
+        } else if (operation.equals("-")) {
+        } else if (operation.equals("/")) {
+        } else if (operation.equals("*")) {
             return operation;
-        if (operation.equals("/"))
-            return operation;
-        if (operation.equals("*"))
-            return operation;
-        else
+        } else {
             throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
+        }
+        return operation;
     }
-
 
     public static String getResult(String result, String num1, String num2) {
 
