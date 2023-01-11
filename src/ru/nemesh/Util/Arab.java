@@ -1,6 +1,8 @@
-package ru.nemesh;
+package ru.nemesh.Util;
 
-public class Arab implements Calculator{
+import ru.nemesh.Interface.Calculator;
+
+public class Arab implements Calculator {
 
     @Override
     public int plus(String a, String b) { return (Convert.convertToInt(a) + Convert.convertToInt(b)); }

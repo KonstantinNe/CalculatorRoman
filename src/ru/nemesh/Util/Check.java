@@ -1,6 +1,8 @@
-package ru.nemesh;
+package ru.nemesh.Util;
 
+import ru.nemesh.Interface.Calculator;
 import ru.nemesh.Exception.*;
+
 
 public class Check {
 
@@ -87,6 +89,7 @@ public class Check {
             for (int i = 0; i < input.length(); i++) {
                 if (input.charAt(i) == ' ') {
                     space = true;
+                    return true;
                 }
             }
         }
@@ -104,18 +107,16 @@ public class Check {
     }
 
     public static String getOperation(String operation) throws OperationException {
-            if (operation.equals("+"))
+        if (operation.equals("+")) {
+        } else if (operation.equals("-")) {
+        } else if (operation.equals("/")) {
+        } else if (operation.equals("*")) {
             return operation;
-            if (operation.equals("-"))
-            return operation;
-            if (operation.equals("/"))
-            return operation;
-            if (operation.equals("*"))
-            return operation;
-            else
-                throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
+        } else {
+            throw new OperationException("Введите оператор (пример +-/*) или пропустили пробел между числои и оператором");
+        }
+        return operation;
     }
-
 
     public static String getResult(String result, String num1, String num2) {
 
@@ -129,20 +130,41 @@ public class Check {
         }
     }
 
-    static String getUnits(String a) {
+    static String getUnits(String a) {                //проверяем результат
         String units[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         String tens[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String hundreds[] = {"C"};
         String arab[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
-            String[] mas = a.split("");
-            String c = mas[0];
-            String e = mas[1];
-        String result1 = getTen(c);
-        String result2 = getUn(e);
-        String result = result1+result2;
-        return result;
+        String[] mas = a.split("");
+        String result1 = null;
+        String result2 = null;
+        String result3 = null;
+        boolean resultNum = CheckMas(a);
+
+        if (resultNum == (true)) {
+            result2 = getUn(mas[0]);
+            return result2;
+        } else {
+            if (resultNum == (false)) ;
+            result1 = getTen(mas[0]);
+            result3 = getUn(mas[1]);
+            String result = result1 + result3;
+            return result;
+        }
+
     }
+
+    private static boolean CheckMas(String a) {
+        String[] mas = a.split("");
+        String value = mas[0];
+        if (a.equals(value)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     static String getTen(String a) {
         if (a.equals("1")) return "X";
@@ -172,14 +194,27 @@ public class Check {
         return a;
     }
 
-    public static String getMas(String a, String b, String c) throws NullnumException {
-            String result = null;
-            if (a.equals(null))
-            if (b.equals(null))
-                return result;
-            else
-                throw new NullnumException("Введите второе число!");
-        return result;
+    public static String getMas(String a) throws NullnumException {     //проверяем сколько чисел введено в строку
+        boolean resultNum = HowmachMas(a);
+
+        if (resultNum == (true)) {
+            return a;
+        } else {
+            throw new NullnumException("Введите число, второе число или проверте количество пробелов(пример 2 + 3)");
+        }
     }
 
+    private static boolean HowmachMas(String a) {
+
+        String[] mas = a.split(" ");
+        int arrayLength = mas.length;
+            for (int i = 0; i < a.length(); i++) {
+                if (arrayLength == 3) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        return false;
+    }
 }
