@@ -87,9 +87,9 @@ public class Check {
         boolean space = false;
         if (input != null) {
             for (int i = 0; i < input.length(); i++) {
-                if (input.charAt(i) == ' '){
-          //      if (' ' == 2)
+                if (input.charAt(i) == ' ') {
                     space = true;
+                    return true;
                 }
             }
         }
@@ -200,7 +200,7 @@ public class Check {
         if (resultNum == (true)) {
             return a;
         } else {
-            throw new NullnumException("Введите второе число!");
+            throw new NullnumException("Введите число, второе число или проверте количество пробелов(пример 2 + 3)");
         }
     }
 
